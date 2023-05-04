@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;S4/Compute.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from S4/Compute.cpp:1:
+In file included from S4/Compute.cpp:1:
+In file included from S4/bnn-library.h:2:
+In file included from /media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int.h:63:
+/media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int_syn.h:3690:512: warning: comparison of unsigned expression &gt;= 0 is always true [-Wtautological-compare]
+template &lt;int _AP_W, bool _AP_S&gt; inline __attribute__((always_inline)) ap_int_base&lt;_AP_W, _AP_S&gt; operator &lt;&lt; (const ap_int_base&lt;_AP_W, _AP_S&gt;&amp; op, unsigned int op2) { ap_int_base&lt;_AP_W, _AP_S&gt; r; if (false) r.V = op2 &gt;= 0 ? (op.V &lt;&lt; op2) : (op.V &gt;&gt; (-op2)); else r.V = op.V &lt;&lt; op2; return r; } template &lt;int _AP_W, bool _AP_S&gt; inline __attribute__((always_inline)) ap_int_base&lt;_AP_W, _AP_S&gt; operator &gt;&gt; (const ap_int_base&lt;_AP_W, _AP_S&gt;&amp; op, unsigned int op2) { ap_int_base&lt;_AP_W, _AP_S&gt; r; if (false) r.V = op2 &gt;= 0 ? (op.V &gt;&gt; op2) : (op.V &lt;&lt; (-op2)); else r.V = op.V &gt;&gt; op2; return r; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ~~~ ^  ~
+S4/conv1d.h:62:15: note: in instantiation of function template specialization &apos;operator&gt;&gt;&lt;32, false&gt;&apos; requested here
+      ei = ei &gt;&gt; OutWidth;
+              ^
+S4/Compute.cpp:96:3: note: in instantiation of function template specialization &apos;StreamingDataWidthConverter_Batch&lt;32, 8, 32768&gt;&apos; requested here
+  StreamingDataWidthConverter_Batch&lt;32, 8, 32768&gt;(cnv_90PRL, cnv_91, 1);
+  ^
+In file included from S4/Compute.cpp:1:
+In file included from S4/Compute.cpp:1:
+In file included from S4/bnn-library.h:2:
+In file included from /media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int.h:63:
+/media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int_syn.h:3690:512: warning: comparison of unsigned expression &gt;= 0 is always true [-Wtautological-compare]
+template &lt;int _AP_W, bool _AP_S&gt; inline __attribute__((always_inline)) ap_int_base&lt;_AP_W, _AP_S&gt; operator &lt;&lt; (const ap_int_base&lt;_AP_W, _AP_S&gt;&amp; op, unsigned int op2) { ap_int_base&lt;_AP_W, _AP_S&gt; r; if (false) r.V = op2 &gt;= 0 ? (op.V &lt;&lt; op2) : (op.V &gt;&gt; (-op2)); else r.V = op.V &lt;&lt; op2; return r; } template &lt;int _AP_W, bool _AP_S&gt; inline __attribute__((always_inline)) ap_int_base&lt;_AP_W, _AP_S&gt; operator &gt;&gt; (const ap_int_base&lt;_AP_W, _AP_S&gt;&amp; op, unsigned int op2) { ap_int_base&lt;_AP_W, _AP_S&gt; r; if (false) r.V = op2 &gt;= 0 ? (op.V &gt;&gt; op2) : (op.V &lt;&lt; (-op2)); else r.V = op.V &gt;&gt; op2; return r; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ~~~ ^  ~
+S4/conv1d.h:88:15: note: in instantiation of function template specialization &apos;operator&gt;&gt;&lt;8, false&gt;&apos; requested here
+      eo = eo &gt;&gt; InWidth;
+              ^
+S4/Compute.cpp:96:3: note: in instantiation of function template specialization &apos;StreamingDataWidthConverter_Batch&lt;32, 8, 32768&gt;&apos; requested here
+  StreamingDataWidthConverter_Batch&lt;32, 8, 32768&gt;(cnv_90PRL, cnv_91, 1);
+  ^
+In file included from S4/Compute.cpp:1:
+In file included from S4/Compute.cpp:2:
+S4/conv1d.h:1964:30: warning: comparison of unsigned expression &lt; 0 is always false [-Wtautological-compare]
+  for (unsigned int r = 0; r &lt; REMAINDER_PIXELS*NF; r++){
+                           ~ ^ ~~~~~~~~~~~~~~~~~~~
+S4/Compute.cpp:108:3: note: in instantiation of function template specialization &apos;StreamingMaxPool_Precision_1d&lt;512, 16, 256, 1, 32&gt;&apos; requested here
+  StreamingMaxPool_Precision_1d&lt;512, 16, 256, 1, 32&gt;(cnv_99, cnv_100);
+  ^
+3 warnings generated.\n"/>
+	<Message severity="WARNING" prefix="[HLS 214-111]" key="HLS 214-111" tag="DATAFLOW,SDX_KERNEL" content="Static variables and non-static stream cannot be used inside a dataflow region: S4/Compute.cpp:28:11"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:02:59 ; elapsed = 00:03:08 . Memory (MB): peak = 349.691 ; gain = 0.094 ; free physical = 20405 ; free virtual = 65409"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:02:59 ; elapsed = 00:03:08 . Memory (MB): peak = 349.691 ; gain = 0.094 ; free physical = 20405 ; free virtual = 65409"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+</Messages>

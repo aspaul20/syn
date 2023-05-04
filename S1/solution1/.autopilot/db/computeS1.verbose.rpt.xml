@@ -1,0 +1,268 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'computeS1'" level="0">
+<item name = "Date">Wed Apr 26 21:03:30 2023
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">S1</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z045ffg900-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.750, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">12863214, 12863214, 4194373, 4194373, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grouperPE_U0">grouperPE, 449030, 449030, 449030, 449030, none</column>
+<column name="Conv1DMac_new_2_U0">Conv1DMac_new_2, 12292, 12292, 12292, 12292, none</column>
+<column name="Conv1DMac_new_1_U0">Conv1DMac_new_1, 262148, 262148, 262148, 262148, none</column>
+<column name="Conv1DMac_new407_U0">Conv1DMac_new407, 4194308, 4194308, 4194308, 4194308, none</column>
+<column name="Conv1DMac_new411_U0">Conv1DMac_new411, 4194308, 4194308, 4194308, 4194308, none</column>
+<column name="Conv1DMac_new_U0">Conv1DMac_new, 4194308, 4194308, 4194308, 4194308, none</column>
+<column name="Conv1DMac_new415_U0">Conv1DMac_new415, 262148, 262148, 262148, 262148, none</column>
+<column name="Conv1DBuffer_new406_U0">Conv1DBuffer_new406, 4194372, 4194372, 4194372, 4194372, none</column>
+<column name="Conv1DBuffer_new410_U0">Conv1DBuffer_new410, 4194372, 4194372, 4194372, 4194372, none</column>
+<column name="Conv1DBuffer_new_U0">Conv1DBuffer_new, 4194372, 4194372, 4194372, 4194372, none</column>
+<column name="Conv1DBuffer_new414_U0">Conv1DBuffer_new414, 262212, 262212, 262212, 262212, none</column>
+<column name="Conv1DBuffer_new_1_U0">Conv1DBuffer_new_1, 262212, 262212, 262212, 262212, none</column>
+<column name="StreamingDataWidthCo_1_U0">StreamingDataWidthCo_1, 262146, 262146, 262146, 262146, none</column>
+<column name="StreamingDataWidthCo_U0">StreamingDataWidthCo, 262146, 262146, 262146, 262146, none</column>
+<column name="StreamingDataWidthCo_2_U0">StreamingDataWidthCo_2, 262146, 262146, 262146, 262146, none</column>
+<column name="Conv1DBuffer_new_2_U0">Conv1DBuffer_new_2, 12295, 12295, 12295, 12295, none</column>
+<column name="StreamingDataWidthCo_4_U0">StreamingDataWidthCo_4, 16386, 16386, 16386, 16386, none</column>
+<column name="StreamingDataWidthCo_3_U0">StreamingDataWidthCo_3, 16386, 16386, 16386, 16386, none</column>
+<column name="StreamingDataWidthCo_5_U0">StreamingDataWidthCo_5, 16386, 16386, 16386, 16386, none</column>
+<column name="StreamingMaxPool_Pre_U0">StreamingMaxPool_Pre, 279875, 279875, 279875, 279875, none</column>
+<column name="Mem2Stream_U0">Mem2Stream, 1545, 1545, 1545, 1545, none</column>
+<column name="ResizeStream_U0">ResizeStream, 32769, 32769, 32769, 32769, none</column>
+<column name="Relu1D408_U0">Relu1D408, 65538, 65538, 65538, 65538, none</column>
+<column name="Relu1D412_U0">Relu1D412, 65538, 65538, 65538, 65538, none</column>
+<column name="Relu1D_U0">Relu1D, 65538, 65538, 65538, 65538, none</column>
+<column name="Relu1D_2_U0">Relu1D_2, 4098, 4098, 4098, 4098, none</column>
+<column name="Relu1D416_U0">Relu1D416, 4098, 4098, 4098, 4098, none</column>
+<column name="Relu1D_1_U0">Relu1D_1, 4098, 4098, 4098, 4098, none</column>
+<column name="CloneStream_U0">CloneStream, 1538, 1538, 1538, 1538, none</column>
+<column name="CloneStreamOnce_U0">CloneStreamOnce, 1538, 1538, 1538, 1538, none</column>
+<column name="ResizeStream_1_U0">ResizeStream_1, 1537, 1537, 1537, 1537, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 4</column>
+<column name="FIFO">15, -, 636, 1545</column>
+<column name="Instance">113, 0, 6526, 21141</column>
+<column name="Memory">-, -, -, -</column>
+<column name="Multiplexer">-, -, -, -</column>
+<column name="Register">-, -, -, -</column>
+<specialColumn name="Available">1090, 900, 437200, 218600</specialColumn>
+<specialColumn name="Utilization (%)">11, 0, 1, 10</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="CloneStream_U0">CloneStream, 0, 0, 19, 131</column>
+<column name="CloneStreamOnce_U0">CloneStreamOnce, 0, 0, 19, 122</column>
+<column name="Conv1DBuffer_new_U0">Conv1DBuffer_new, 1, 0, 94, 468</column>
+<column name="Conv1DBuffer_new406_U0">Conv1DBuffer_new406, 1, 0, 94, 468</column>
+<column name="Conv1DBuffer_new410_U0">Conv1DBuffer_new410, 1, 0, 94, 468</column>
+<column name="Conv1DBuffer_new414_U0">Conv1DBuffer_new414, 1, 0, 86, 456</column>
+<column name="Conv1DBuffer_new_1_U0">Conv1DBuffer_new_1, 1, 0, 86, 456</column>
+<column name="Conv1DBuffer_new_2_U0">Conv1DBuffer_new_2, 1, 0, 56, 407</column>
+<column name="Conv1DMac_new_U0">Conv1DMac_new, 4, 0, 340, 1075</column>
+<column name="Conv1DMac_new407_U0">Conv1DMac_new407, 4, 0, 340, 1075</column>
+<column name="Conv1DMac_new411_U0">Conv1DMac_new411, 4, 0, 340, 1075</column>
+<column name="Conv1DMac_new415_U0">Conv1DMac_new415, 4, 0, 336, 1071</column>
+<column name="Conv1DMac_new_1_U0">Conv1DMac_new_1, 4, 0, 340, 1113</column>
+<column name="Conv1DMac_new_2_U0">Conv1DMac_new_2, 0, 0, 539, 1353</column>
+<column name="Mem2Stream_U0">Mem2Stream, 0, 0, 92, 173</column>
+<column name="Relu1D_U0">Relu1D, 0, 0, 25, 164</column>
+<column name="Relu1D408_U0">Relu1D408, 0, 0, 25, 164</column>
+<column name="Relu1D412_U0">Relu1D412, 0, 0, 25, 164</column>
+<column name="Relu1D416_U0">Relu1D416, 0, 0, 21, 155</column>
+<column name="Relu1D_1_U0">Relu1D_1, 0, 0, 21, 155</column>
+<column name="Relu1D_2_U0">Relu1D_2, 0, 0, 21, 155</column>
+<column name="ResizeStream_U0">ResizeStream, 0, 0, 166, 134</column>
+<column name="ResizeStream_1_U0">ResizeStream_1, 0, 0, 15, 95</column>
+<column name="StreamingDataWidthCo_U0">StreamingDataWidthCo, 0, 0, 84, 279</column>
+<column name="StreamingDataWidthCo_1_U0">StreamingDataWidthCo_1, 0, 0, 84, 279</column>
+<column name="StreamingDataWidthCo_2_U0">StreamingDataWidthCo_2, 0, 0, 84, 279</column>
+<column name="StreamingDataWidthCo_3_U0">StreamingDataWidthCo_3, 0, 0, 80, 270</column>
+<column name="StreamingDataWidthCo_4_U0">StreamingDataWidthCo_4, 0, 0, 79, 261</column>
+<column name="StreamingDataWidthCo_5_U0">StreamingDataWidthCo_5, 0, 0, 80, 270</column>
+<column name="StreamingMaxPool_Pre_U0">StreamingMaxPool_Pre, 1, 0, 78, 365</column>
+<column name="computeS1_control_s_axi_U">computeS1_control_s_axi, 0, 0, 68, 104</column>
+<column name="computeS1_hostmem_m_axi_U">computeS1_hostmem_m_axi, 4, 0, 566, 766</column>
+<column name="grouperPE_U0">grouperPE, 82, 0, 2129, 7171</column>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+<column name="cnv_10_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_11PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_12PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_13_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_14_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_15PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_16PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_17_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_18_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_19_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_1_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="cnv_20PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_21PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_22_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_23_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_24PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_25PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_2PRL_V_V_U">2, 66, 105, 1024, 32, 32768</column>
+<column name="cnv_3PRL_V_V_U">2, 66, 105, 1024, 32, 32768</column>
+<column name="cnv_4_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="cnv_5_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="cnv_6_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="cnv_7PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_8PRL_V_V_U">0, 5, 44, 2, 32, 64</column>
+<column name="cnv_9_V_V_U">0, 5, 20, 2, 8, 16</column>
+<column name="inStr2_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="inStr_V_V_U">4, 98, 136, 1024, 64, 65536</column>
+<column name="in_1_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="in_2_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="in_3_V_V_U">1, 43, 77, 1024, 8, 8192</column>
+<column name="outStr_V_V_U">0, 5, 20, 2, 8, 16</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="CloneStream_U0_start_full_n">and, 0, 0, 2, 1, 1</column>
+<column name="ap_idle">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_control_AWVALID">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_AWREADY">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_AWADDR">in, 5, s_axi, control, scalar</column>
+<column name="s_axi_control_WVALID">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_WREADY">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_WDATA">in, 32, s_axi, control, scalar</column>
+<column name="s_axi_control_WSTRB">in, 4, s_axi, control, scalar</column>
+<column name="s_axi_control_ARVALID">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_ARREADY">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_ARADDR">in, 5, s_axi, control, scalar</column>
+<column name="s_axi_control_RVALID">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_RREADY">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_RDATA">out, 32, s_axi, control, scalar</column>
+<column name="s_axi_control_RRESP">out, 2, s_axi, control, scalar</column>
+<column name="s_axi_control_BVALID">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_BREADY">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_BRESP">out, 2, s_axi, control, scalar</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, computeS1, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, computeS1, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, computeS1, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, computeS1, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, computeS1, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, computeS1, return value</column>
+<column name="m_axi_hostmem_AWVALID">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWREADY">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWADDR">out, 32, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWID">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWLEN">out, 8, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWSIZE">out, 3, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWBURST">out, 2, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWLOCK">out, 2, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWCACHE">out, 4, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWPROT">out, 3, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWQOS">out, 4, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWREGION">out, 4, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_AWUSER">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WVALID">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WREADY">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WDATA">out, 64, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WSTRB">out, 8, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WLAST">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WID">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_WUSER">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARVALID">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARREADY">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARADDR">out, 32, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARID">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARLEN">out, 8, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARSIZE">out, 3, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARBURST">out, 2, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARLOCK">out, 2, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARCACHE">out, 4, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARPROT">out, 3, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARQOS">out, 4, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARREGION">out, 4, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_ARUSER">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RVALID">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RREADY">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RDATA">in, 64, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RLAST">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RID">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RUSER">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_RRESP">in, 2, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_BVALID">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_BREADY">out, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_BRESP">in, 2, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_BID">in, 1, m_axi, hostmem, pointer</column>
+<column name="m_axi_hostmem_BUSER">in, 1, m_axi, hostmem, pointer</column>
+<column name="s1_out_V_V_TDATA">out, 64, axis, s1_out_V_V, pointer</column>
+<column name="s1_out_V_V_TVALID">out, 1, axis, s1_out_V_V, pointer</column>
+<column name="s1_out_V_V_TREADY">in, 1, axis, s1_out_V_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Compute.cpp" path="/home/tukl/Amur/IndividualSyn/S1/Compute.cpp"/>
+    <originFiles name="biasMem-0.h" path="/home/tukl/Amur/IndividualSyn/S1/biasMem-0.h"/>
+    <originFiles name="biasMem-1.h" path="/home/tukl/Amur/IndividualSyn/S1/biasMem-1.h"/>
+    <originFiles name="biasMem-2.h" path="/home/tukl/Amur/IndividualSyn/S1/biasMem-2.h"/>
+    <originFiles name="biasMem-3.h" path="/home/tukl/Amur/IndividualSyn/S1/biasMem-3.h"/>
+    <originFiles name="biasMem-4.h" path="/home/tukl/Amur/IndividualSyn/S1/biasMem-4.h"/>
+    <originFiles name="biasMem-5.h" path="/home/tukl/Amur/IndividualSyn/S1/biasMem-5.h"/>
+    <originFiles name="bnn-library.h" path="/home/tukl/Amur/IndividualSyn/S1/bnn-library.h"/>
+    <originFiles name="config.h" path="/home/tukl/Amur/IndividualSyn/S1/config.h"/>
+    <originFiles name="conv1d.h" path="/home/tukl/Amur/IndividualSyn/S1/conv1d.h"/>
+    <originFiles name="grouperPE.hpp" path="/home/tukl/Amur/IndividualSyn/S1/grouperPE.hpp"/>
+    <originFiles name="weightMem-0.h" path="/home/tukl/Amur/IndividualSyn/S1/weightMem-0.h"/>
+    <originFiles name="weightMem-1.h" path="/home/tukl/Amur/IndividualSyn/S1/weightMem-1.h"/>
+    <originFiles name="weightMem-2.h" path="/home/tukl/Amur/IndividualSyn/S1/weightMem-2.h"/>
+    <originFiles name="weightMem-3.h" path="/home/tukl/Amur/IndividualSyn/S1/weightMem-3.h"/>
+    <originFiles name="weightMem-4.h" path="/home/tukl/Amur/IndividualSyn/S1/weightMem-4.h"/>
+    <originFiles name="weightMem-5.h" path="/home/tukl/Amur/IndividualSyn/S1/weightMem-5.h"/>
+    <originFiles name="weights.hpp" path="/home/tukl/Amur/IndividualSyn/S1/weights.hpp"/>
+  </source>
+  <testbench>
+    <originFiles name="my_tb.cpp" path="/home/tukl/Amur/IndividualSyn/S1/my_tb.cpp"/>
+    <originFiles name="output.txt" path="/home/tukl/Amur/IndividualSyn/S1/output.txt"/>
+    <originFiles name="point_cloud.txt" path="/home/tukl/Amur/IndividualSyn/S1/point_cloud.txt"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

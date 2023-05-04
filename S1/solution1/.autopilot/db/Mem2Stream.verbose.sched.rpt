@@ -1,0 +1,232 @@
+
+
+================================================================
+== Vivado HLS Report for 'Mem2Stream'
+================================================================
+* Date:           Wed Apr 26 21:02:33 2023
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        S1
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z045ffg900-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  1545|  1545|  1545|  1545|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  1537|  1537|         3|          1|          1|  1536|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	11  / (tmp)
+	9  / (!tmp)
+9 --> 
+	10  / true
+10 --> 
+	8  / true
+11 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 8.75>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%in_V_offset_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %in_V_offset)"   --->   Operation 12 'read' 'in_V_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%in_V_offset1 = call i29 @_ssdm_op_PartSelect.i29.i32.i32.i32(i32 %in_V_offset_read, i32 3, i32 31)"   --->   Operation 13 'partselect' 'in_V_offset1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_112 = zext i29 %in_V_offset1 to i64"   --->   Operation 14 'zext' 'tmp_112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%in_V_addr = getelementptr i64* %in_V, i64 %tmp_112"   --->   Operation 15 'getelementptr' 'in_V_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [7/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 16 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 17 [6/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 17 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 18 [5/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 18 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 8.75>
+ST_4 : Operation 19 [4/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 19 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 20 [3/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 20 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 21 [2/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 21 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str431, i32 0, i32 0, [1 x i8]* @p_str432, [1 x i8]* @p_str433, [1 x i8]* @p_str434, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str435, [1 x i8]* @p_str436)"   --->   Operation 22 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %in_V, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 1536, [8 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 24 [1/7] (8.75ns)   --->   "%in_V_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i64P(i64* %in_V_addr, i32 1536)" [S1/conv1d.h:1838]   --->   Operation 24 'readreq' 'in_V_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 25 [1/1] (1.30ns)   --->   "br label %1" [S1/conv1d.h:1836]   --->   Operation 25 'br' <Predicate = true> <Delay = 1.30>
+
+State 8 <SV = 7> <Delay = 1.70>
+ST_8 : Operation 26 [1/1] (0.00ns)   --->   "%i = phi i11 [ 0, %0 ], [ %i_5, %2 ]"   --->   Operation 26 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 27 [1/1] (1.52ns)   --->   "%tmp = icmp eq i11 %i, -512" [S1/conv1d.h:1836]   --->   Operation 27 'icmp' 'tmp' <Predicate = true> <Delay = 1.52> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.52> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 28 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1536, i64 1536, i64 1536)"   --->   Operation 28 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 29 [1/1] (1.70ns)   --->   "%i_5 = add i11 %i, 1" [S1/conv1d.h:1836]   --->   Operation 29 'add' 'i_5' <Predicate = true> <Delay = 1.70> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 30 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %2" [S1/conv1d.h:1836]   --->   Operation 30 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 8.75>
+ST_9 : Operation 31 [1/1] (8.75ns)   --->   "%e_V = call i64 @_ssdm_op_Read.m_axi.i64P(i64* %in_V_addr)" [S1/conv1d.h:1838]   --->   Operation 31 'read' 'e_V' <Predicate = (!tmp)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 3.40>
+ST_10 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_39 = call i32 (...)* @_ssdm_op_SpecRegionBegin([12 x i8]* @p_str2281)" [S1/conv1d.h:1836]   --->   Operation 32 'specregionbegin' 'tmp_39' <Predicate = (!tmp)> <Delay = 0.00>
+ST_10 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [S1/conv1d.h:1837]   --->   Operation 33 'specpipeline' <Predicate = (!tmp)> <Delay = 0.00>
+ST_10 : Operation 34 [1/1] (3.40ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* %out_V_V, i64 %e_V)" [S1/conv1d.h:1841]   --->   Operation 34 'write' <Predicate = (!tmp)> <Delay = 3.40> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 64> <Depth = 2> <FIFO>
+ST_10 : Operation 35 [1/1] (0.00ns)   --->   "%empty_138 = call i32 (...)* @_ssdm_op_SpecRegionEnd([12 x i8]* @p_str2281, i32 %tmp_39)" [S1/conv1d.h:1842]   --->   Operation 35 'specregionend' 'empty_138' <Predicate = (!tmp)> <Delay = 0.00>
+ST_10 : Operation 36 [1/1] (0.00ns)   --->   "br label %1" [S1/conv1d.h:1836]   --->   Operation 36 'br' <Predicate = (!tmp)> <Delay = 0.00>
+
+State 11 <SV = 8> <Delay = 0.00>
+ST_11 : Operation 37 [1/1] (0.00ns)   --->   "ret void" [S1/conv1d.h:1843]   --->   Operation 37 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.75ns
+The critical path consists of the following:
+	wire read on port 'in_V_offset' [4]  (0 ns)
+	'getelementptr' operation ('in_V_addr') [7]  (0 ns)
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'in_V' (S1/conv1d.h:1838) [10]  (8.75 ns)
+
+ <State 8>: 1.71ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', S1/conv1d.h:1836) [13]  (0 ns)
+	'add' operation ('i', S1/conv1d.h:1836) [16]  (1.71 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'in_V' (S1/conv1d.h:1838) [21]  (8.75 ns)
+
+ <State 10>: 3.4ns
+The critical path consists of the following:
+	fifo write on port 'out_V_V' (S1/conv1d.h:1841) [22]  (3.4 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

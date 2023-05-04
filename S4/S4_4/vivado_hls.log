@@ -1,0 +1,451 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'root' on host 'tukl-pc' (Linux_x86_64 version 5.15.0-67-generic) on Tue May 02 18:47:12 CST 2023
+INFO: [HLS 200-10] On os Ubuntu 20.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/tukl/Amur/IndividualSyn/S4/S4_4'
+INFO: [HLS 200-10] Opening project '/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4'.
+INFO: [HLS 200-10] Adding design file 'S4_4/weights.hpp' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/weightMem-27.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/weightMem-26.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/weightMem-25.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/conv1d.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/bnn-library.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/biasMem-27.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/biasMem-26.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/biasMem-25.h' to the project
+INFO: [HLS 200-10] Adding design file 'S4_4/Compute.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'S4_4/my_tb.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z045ffg900-2'
+INFO: [HLS 200-10] Analyzing design file 'S4_4/Compute.cpp' ... 
+WARNING: [HLS 200-40] In file included from S4_4/Compute.cpp:1:
+In file included from S4_4/Compute.cpp:1:
+In file included from S4_4/bnn-library.h:2:
+In file included from /media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int.h:63:
+/media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int_syn.h:3690:512: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+template <int _AP_W, bool _AP_S> inline __attribute__((always_inline)) ap_int_base<_AP_W, _AP_S> operator << (const ap_int_base<_AP_W, _AP_S>& op, unsigned int op2) { ap_int_base<_AP_W, _AP_S> r; if (false) r.V = op2 >= 0 ? (op.V << op2) : (op.V >> (-op2)); else r.V = op.V << op2; return r; } template <int _AP_W, bool _AP_S> inline __attribute__((always_inline)) ap_int_base<_AP_W, _AP_S> operator >> (const ap_int_base<_AP_W, _AP_S>& op, unsigned int op2) { ap_int_base<_AP_W, _AP_S> r; if (false) r.V = op2 >= 0 ? (op.V >> op2) : (op.V << (-op2)); else r.V = op.V >> op2; return r; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ~~~ ^  ~
+S4_4/conv1d.h:62:15: note: in instantiation of function template specialization 'operator>><8, false>' requested here
+      ei = ei >> OutWidth;
+              ^
+S4_4/Compute.cpp:139:2: note: in instantiation of function template specialization 'StreamingDataWidthConverter_Batch<8, 64, 256>' requested here
+ StreamingDataWidthConverter_Batch<8, 64, 256>(inn, fc1, 1);
+ ^
+In file included from S4_4/Compute.cpp:1:
+In file included from S4_4/Compute.cpp:1:
+In file included from S4_4/bnn-library.h:2:
+In file included from /media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int.h:63:
+/media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/common/technology/autopilot/ap_int_syn.h:3690:512: warning: comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+template <int _AP_W, bool _AP_S> inline __attribute__((always_inline)) ap_int_base<_AP_W, _AP_S> operator << (const ap_int_base<_AP_W, _AP_S>& op, unsigned int op2) { ap_int_base<_AP_W, _AP_S> r; if (false) r.V = op2 >= 0 ? (op.V << op2) : (op.V >> (-op2)); else r.V = op.V << op2; return r; } template <int _AP_W, bool _AP_S> inline __attribute__((always_inline)) ap_int_base<_AP_W, _AP_S> operator >> (const ap_int_base<_AP_W, _AP_S>& op, unsigned int op2) { ap_int_base<_AP_W, _AP_S> r; if (false) r.V = op2 >= 0 ? (op.V >> op2) : (op.V << (-op2)); else r.V = op.V >> op2; return r; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ~~~ ^  ~
+S4_4/conv1d.h:88:15: note: in instantiation of function template specialization 'operator>><64, false>' requested here
+      eo = eo >> InWidth;
+              ^
+S4_4/Compute.cpp:139:2: note: in instantiation of function template specialization 'StreamingDataWidthConverter_Batch<8, 64, 256>' requested here
+ StreamingDataWidthConverter_Batch<8, 64, 256>(inn, fc1, 1);
+ ^
+2 warnings generated.\n
+WARNING: [HLS 214-111] Static variables and non-static stream cannot be used inside a dataflow region: S4_4/Compute.cpp:87:11
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:02:29 ; elapsed = 00:02:37 . Memory (MB): peak = 349.691 ; gain = 0.094 ; free physical = 20208 ; free virtual = 65425
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:02:29 ; elapsed = 00:02:37 . Memory (MB): peak = 349.691 ; gain = 0.094 ; free physical = 20208 ; free virtual = 65425
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<8, 1, true, (ap_q_mode)1, (ap_o_mode)3, 0>::quantization_adjust' into 'ap_fixed_base<8, 1, true, (ap_q_mode)1, (ap_o_mode)3, 0>::ap_fixed_base<72, 2, true, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:03:56 ; elapsed = 00:18:10 . Memory (MB): peak = 39987.816 ; gain = 39638.219 ; free physical = 246 ; free virtual = 24155
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] S4_4/conv1d.h:1572: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:03:57 ; elapsed = 00:18:13 . Memory (MB): peak = 39988.574 ; gain = 39638.977 ; free physical = 204 ; free virtual = 24179
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'loop_dim' (S4_4/conv1d.h:965) in function 'Relu1D_NP<(unsigned short)512, (unsigned short)1, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)64, (unsigned short)1>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'loop_dim' (S4_4/conv1d.h:1503) in function 'FCMac<(unsigned short)256, (unsigned short)512, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 16384u>, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 64u> >' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'loop_simd' (S4_4/conv1d.h:972) in function 'Relu1D_NP<(unsigned short)512, (unsigned short)1, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)64, (unsigned short)1>' completely.
+INFO: [XFORM 203-501] Unrolling loop 'loop_ne' (S4_4/conv1d.h:1510) in function 'FCMac<(unsigned short)256, (unsigned short)512, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 16384u>, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 64u> >' completely.
+INFO: [XFORM 203-501] Unrolling loop 'loop_pe' (S4_4/conv1d.h:1512) in function 'FCMac<(unsigned short)256, (unsigned short)512, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 16384u>, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 64u> >' completely.
+INFO: [XFORM 203-101] Partitioning array 'weights25.m_weights.V'  in dimension 1 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'bias25.m_weights.V'  accessed through non-constant indices on dimension 2 (S4_4/conv1d.h:1493:62), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'bias25.m_weights.V'  in dimension 2 completely.
+WARNING: [XFORM 203-104] Completely partitioning array 'macRegisters.V' (S4_4/conv1d.h:1481) accessed through non-constant indices on dimension 2 (S4_4/conv1d.h:1496:4), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead.
+INFO: [XFORM 203-101] Partitioning array 'macRegisters.V' (S4_4/conv1d.h:1481) in dimension 2 completely.
+INFO: [XFORM 203-712] Applying dataflow to function 'computeS4_4', detected/extracted 6 process function(s): 
+	 'ResizeStream<64u, 8u, 256u>'
+	 'StreamingDataWidthConverter_Batch<8u, 64u, 256u>'
+	 'FCMac<(unsigned short)256, (unsigned short)512, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 16384u>, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 64u> >'
+	 'Relu1D_NP<(unsigned short)512, (unsigned short)1, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)64, (unsigned short)1>'
+	 'StreamingDataWidthConverter_Batch<64u, 8u, 64u>'
+	 'ResizeStream<8u, 64u, 40u>'.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:05:19 ; elapsed = 00:19:37 . Memory (MB): peak = 40067.809 ; gain = 39718.211 ; free physical = 217 ; free virtual = 24028
+WARNING: [XFORM 203-631] Renaming function 'StreamingDataWidthConverter_Batch<8u, 64u, 256u>' to 'StreamingDataWidthCo' (S4_4/conv1d.h:84:46)
+WARNING: [XFORM 203-631] Renaming function 'StreamingDataWidthConverter_Batch<64u, 8u, 64u>' to 'StreamingDataWidthCo.1' (S4_4/conv1d.h:52:46)
+WARNING: [XFORM 203-631] Renaming function 'ResizeStream<8u, 64u, 40u>' to 'ResizeStream' (S4_4/conv1d.h:19:37)
+WARNING: [XFORM 203-631] Renaming function 'ResizeStream<64u, 8u, 256u>' to 'ResizeStream.1' (S4_4/conv1d.h:19:37)
+WARNING: [XFORM 203-631] Renaming function 'Relu1D_NP<(unsigned short)512, (unsigned short)1, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)64, (unsigned short)1>' to 'Relu1D_NP' (S4_4/conv1d.h:964:50)
+WARNING: [XFORM 203-631] Renaming function 'FCMac<(unsigned short)256, (unsigned short)512, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)64, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, (unsigned short)8, (unsigned short)1, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 16384u>, FixedPointWeights<1u, ap_fixed<8, 1, (ap_q_mode)1, (ap_o_mode)3, 0>, 8u, 64u> >' to 'FCMac' (S4_4/conv1d.h:1481:57)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:06:11 ; elapsed = 00:20:34 . Memory (MB): peak = 40067.809 ; gain = 39718.211 ; free physical = 226 ; free virtual = 23926
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'computeS4_4' ...
+WARNING: [SYN 201-103] Legalizing function name 'ResizeStream.1' to 'ResizeStream_1'.
+WARNING: [SYN 201-103] Legalizing function name 'StreamingDataWidthCo.1' to 'StreamingDataWidthCo_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ResizeStream_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1240.68 seconds; current allocated memory: 1.669 GB.
+INFO: [HLS 200-434] Only 0 loops out of a total 1 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 1.669 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'StreamingDataWidthCo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 1.669 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 1.670 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FCMac' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop_dim'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 64, Final II = 64, Depth = 69.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 651.8 seconds; current allocated memory: 1.707 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 40.65 seconds; current allocated memory: 1.747 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Relu1D_NP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'loop_dim'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 28.98 seconds; current allocated memory: 1.750 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 1.750 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'StreamingDataWidthCo_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 1.750 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 1.750 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ResizeStream' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 1.750 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 1.750 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'computeS4_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 1.750 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 3.12 seconds; current allocated memory: 1.753 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ResizeStream_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ResizeStream_1'.
+INFO: [HLS 200-111]  Elapsed time: 3.16 seconds; current allocated memory: 1.755 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'StreamingDataWidthCo' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'StreamingDataWidthCo'.
+INFO: [HLS 200-111]  Elapsed time: 0.32 seconds; current allocated memory: 1.756 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FCMac' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_0' to 'FCMac_bias25_m_webkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_1' to 'FCMac_bias25_m_wecud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_2' to 'FCMac_bias25_m_wedEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_3' to 'FCMac_bias25_m_weeOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_4' to 'FCMac_bias25_m_wefYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_5' to 'FCMac_bias25_m_weg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_6' to 'FCMac_bias25_m_wehbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_7' to 'FCMac_bias25_m_weibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_8' to 'FCMac_bias25_m_wejbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_9' to 'FCMac_bias25_m_wekbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_10' to 'FCMac_bias25_m_welbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_11' to 'FCMac_bias25_m_wemb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_12' to 'FCMac_bias25_m_wencg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_13' to 'FCMac_bias25_m_weocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_14' to 'FCMac_bias25_m_wepcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_15' to 'FCMac_bias25_m_weqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_16' to 'FCMac_bias25_m_wercU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_17' to 'FCMac_bias25_m_wesc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_18' to 'FCMac_bias25_m_wetde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_19' to 'FCMac_bias25_m_weudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_20' to 'FCMac_bias25_m_wevdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_21' to 'FCMac_bias25_m_wewdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_22' to 'FCMac_bias25_m_wexdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_23' to 'FCMac_bias25_m_weyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_24' to 'FCMac_bias25_m_wezec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_25' to 'FCMac_bias25_m_weAem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_26' to 'FCMac_bias25_m_weBew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_27' to 'FCMac_bias25_m_weCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_28' to 'FCMac_bias25_m_weDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_29' to 'FCMac_bias25_m_weEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_30' to 'FCMac_bias25_m_weFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_31' to 'FCMac_bias25_m_weGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_32' to 'FCMac_bias25_m_weHfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_33' to 'FCMac_bias25_m_weIfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_34' to 'FCMac_bias25_m_weJfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_35' to 'FCMac_bias25_m_weKfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_36' to 'FCMac_bias25_m_weLf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_37' to 'FCMac_bias25_m_weMgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_38' to 'FCMac_bias25_m_weNgs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_39' to 'FCMac_bias25_m_weOgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_40' to 'FCMac_bias25_m_wePgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_41' to 'FCMac_bias25_m_weQgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_42' to 'FCMac_bias25_m_weRg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_43' to 'FCMac_bias25_m_weShg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_44' to 'FCMac_bias25_m_weThq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_45' to 'FCMac_bias25_m_weUhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_46' to 'FCMac_bias25_m_weVhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_47' to 'FCMac_bias25_m_weWhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_48' to 'FCMac_bias25_m_weXh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_49' to 'FCMac_bias25_m_weYie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_50' to 'FCMac_bias25_m_weZio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_51' to 'FCMac_bias25_m_we0iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_52' to 'FCMac_bias25_m_we1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_53' to 'FCMac_bias25_m_we2iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_54' to 'FCMac_bias25_m_we3i2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_55' to 'FCMac_bias25_m_we4jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_56' to 'FCMac_bias25_m_we5jm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_57' to 'FCMac_bias25_m_we6jw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_58' to 'FCMac_bias25_m_we7jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_59' to 'FCMac_bias25_m_we8jQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_60' to 'FCMac_bias25_m_we9j0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_61' to 'FCMac_bias25_m_webak' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_62' to 'FCMac_bias25_m_webbk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_bias25_m_weights_V_63' to 'FCMac_bias25_m_webck' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_7' to 'FCMac_weights25_mbdk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_6' to 'FCMac_weights25_mbek' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_5' to 'FCMac_weights25_mbfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_4' to 'FCMac_weights25_mbgk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_3' to 'FCMac_weights25_mbhl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_2' to 'FCMac_weights25_mbil' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_1' to 'FCMac_weights25_mbjl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_weights25_m_weights_s' to 'FCMac_weights25_mbkl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_0_V' to 'FCMac_macRegisterbll' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_1_V' to 'FCMac_macRegisterbml' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_2_V' to 'FCMac_macRegisterbnm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_3_V' to 'FCMac_macRegisterbom' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_4_V' to 'FCMac_macRegisterbpm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_5_V' to 'FCMac_macRegisterbqm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_6_V' to 'FCMac_macRegisterbrm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_7_V' to 'FCMac_macRegisterbsm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_8_V' to 'FCMac_macRegisterbtn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_9_V' to 'FCMac_macRegisterbun' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_10_V' to 'FCMac_macRegisterbvn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_11_V' to 'FCMac_macRegisterbwn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_12_V' to 'FCMac_macRegisterbxn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_13_V' to 'FCMac_macRegisterbyn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_14_V' to 'FCMac_macRegisterbzo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_15_V' to 'FCMac_macRegisterbAo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_16_V' to 'FCMac_macRegisterbBo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_17_V' to 'FCMac_macRegisterbCo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_18_V' to 'FCMac_macRegisterbDo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_19_V' to 'FCMac_macRegisterbEo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_20_V' to 'FCMac_macRegisterbFp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_21_V' to 'FCMac_macRegisterbGp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_22_V' to 'FCMac_macRegisterbHp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_23_V' to 'FCMac_macRegisterbIp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_24_V' to 'FCMac_macRegisterbJp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_25_V' to 'FCMac_macRegisterbKp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_26_V' to 'FCMac_macRegisterbLp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_27_V' to 'FCMac_macRegisterbMq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_28_V' to 'FCMac_macRegisterbNq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_29_V' to 'FCMac_macRegisterbOq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_30_V' to 'FCMac_macRegisterbPq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_31_V' to 'FCMac_macRegisterbQq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_32_V' to 'FCMac_macRegisterbRq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_33_V' to 'FCMac_macRegisterbSr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_34_V' to 'FCMac_macRegisterbTr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_35_V' to 'FCMac_macRegisterbUr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_36_V' to 'FCMac_macRegisterbVr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_37_V' to 'FCMac_macRegisterbWr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_38_V' to 'FCMac_macRegisterbXr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_39_V' to 'FCMac_macRegisterbYs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_40_V' to 'FCMac_macRegisterbZs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_41_V' to 'FCMac_macRegisterb0s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_42_V' to 'FCMac_macRegisterb1s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_43_V' to 'FCMac_macRegisterb2s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_44_V' to 'FCMac_macRegisterb3s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_45_V' to 'FCMac_macRegisterb4t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_46_V' to 'FCMac_macRegisterb5t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_47_V' to 'FCMac_macRegisterb6t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_48_V' to 'FCMac_macRegisterb7t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_49_V' to 'FCMac_macRegisterb8t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_50_V' to 'FCMac_macRegisterb9t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_51_V' to 'FCMac_macRegistercau' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_52_V' to 'FCMac_macRegistercbu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_53_V' to 'FCMac_macRegisterccu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_54_V' to 'FCMac_macRegistercdu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_55_V' to 'FCMac_macRegisterceu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_56_V' to 'FCMac_macRegistercfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_57_V' to 'FCMac_macRegistercgu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_58_V' to 'FCMac_macRegisterchv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_59_V' to 'FCMac_macRegisterciv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_60_V' to 'FCMac_macRegistercjv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_61_V' to 'FCMac_macRegisterckv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_62_V' to 'FCMac_macRegisterclv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FCMac_macRegisters_63_V' to 'FCMac_macRegistercmv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'computeS4_4_mux_646_8_1_1' to 'computeS4_4_mux_6cnw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'computeS4_4_mul_7s_64s_70_2_1' to 'computeS4_4_mul_7cow' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'computeS4_4_mul_7cow': 512 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'computeS4_4_mux_6cnw': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FCMac'.
+INFO: [HLS 200-111]  Elapsed time: 4.18 seconds; current allocated memory: 1.817 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Relu1D_NP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Relu1D_NP'.
+INFO: [HLS 200-111]  Elapsed time: 41.1 seconds; current allocated memory: 1.970 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'StreamingDataWidthCo_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'StreamingDataWidthCo_1'.
+INFO: [HLS 200-111]  Elapsed time: 1.38 seconds; current allocated memory: 1.971 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ResizeStream' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ResizeStream'.
+INFO: [HLS 200-111]  Elapsed time: 1.44 seconds; current allocated memory: 1.971 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'computeS4_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'computeS4_4/input1_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'computeS4_4/s4_out_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'computeS4_4' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'start_for_StreamingDataWidthCo_U0' to 'start_for_Streamicpw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_Relu1D_NP_U0' to 'start_for_Relu1D_cqw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_StreamingDataWidthCo_1_U0' to 'start_for_Streamicrw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_ResizeStream_U0' to 'start_for_ResizeScsw' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'computeS4_4'.
+INFO: [HLS 200-111]  Elapsed time: 1.4 seconds; current allocated memory: 1.972 GB.
+INFO: [RTMG 210-282] Generating pipelined core: 'computeS4_4_mul_7cow_MulnS_0'
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_webkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wecud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wedEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weeOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wefYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wehbi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wejbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wekbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_welbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wemb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wencg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weocq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wepcA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weqcK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wercU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wesc4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wetde_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weudo_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wevdy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wewdI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wexdS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weyd2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wezec_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weAem_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weBew_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weCeG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weDeQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weEe0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weFfa_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weGfk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weHfu_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weIfE_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weJfO_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weKfY_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weLf8_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weMgi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weNgs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weOgC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_wePgM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weQgW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weRg6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weShg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weThq_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weUhA_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weVhK_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weWhU_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weXh4_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weYie_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_weZio_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we0iy_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we1iI_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we2iS_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we3i2_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we4jc_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we5jm_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we6jw_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we7jG_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we8jQ_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_we9j0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_webak_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_webbk_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_bias25_m_webck_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbdk_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbek_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbfk_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbgk_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbhl_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbil_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbjl_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'FCMac_weights25_mbkl_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'FCMac_macRegisterbll_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'inn_V_V_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc1_V_V_U(fifo_w64_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc2_V_V_U(fifo_w64_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fc3_V_V_U(fifo_w64_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'outStr_V_V_U(fifo_w8_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Streamicpw_U(start_for_Streamicpw)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_FCMac_U0_U(start_for_FCMac_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Relu1D_cqw_U(start_for_Relu1D_cqw)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Streamicrw_U(start_for_Streamicrw)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_ResizeScsw_U(start_for_ResizeScsw)' using Shift Registers.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:19:12 ; elapsed = 00:33:51 . Memory (MB): peak = 40335.836 ; gain = 39986.238 ; free physical = 250 ; free virtual = 23709
+INFO: [SYSC 207-301] Generating SystemC RTL for computeS4_4.
+INFO: [VHDL 208-304] Generating VHDL RTL for computeS4_4.
+INFO: [VLOG 209-307] Generating Verilog RTL for computeS4_4.
+INFO: [HLS 200-112] Total elapsed time: 2031.76 seconds; peak allocated memory: 1.972 GB.

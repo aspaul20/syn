@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="weights.hpp" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/weights.hpp"/>
+    <originFiles name="weightMem-27.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/weightMem-27.h"/>
+    <originFiles name="weightMem-26.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/weightMem-26.h"/>
+    <originFiles name="weightMem-25.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/weightMem-25.h"/>
+    <originFiles name="conv1d.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/conv1d.h"/>
+    <originFiles name="bnn-library.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/bnn-library.h"/>
+    <originFiles name="biasMem-27.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/biasMem-27.h"/>
+    <originFiles name="biasMem-26.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/biasMem-26.h"/>
+    <originFiles name="biasMem-25.h" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/biasMem-25.h"/>
+    <originFiles name="Compute.cpp" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/Compute.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="my_tb.cpp" path="/home/tukl/Amur/IndividualSyn/S4/S4_4/S4_4/my_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

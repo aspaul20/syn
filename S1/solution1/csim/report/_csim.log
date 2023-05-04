@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../Compute.cpp in debug mode
+   Generating csim.exe
+
+Total: 16384
+Correct: 12827
+Incorrect: 3557
+Accuracy: 78.2898%
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

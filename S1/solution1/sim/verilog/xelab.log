@@ -1,0 +1,549 @@
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_computeS1_top glbl -prj computeS1.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm --initfile /media/tukl/ee279b7d-bb8a-4a20-8bf9-90b2c542efcc/opt/Xilinx/Vivado/2018.2/data/xsim/ip/xsim_ip.ini --lib ieee_proposed=./ieee_proposed -s computeS1 
+Multi-threading is on. Using 6 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_432xdS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_432xdS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_ResizeSZio.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_ResizeSZio_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_ResizeSZio
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DBbnm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbnm_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbnm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Relu1D416.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Relu1D416
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_axi_s_s1_out_V_V.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_s1_out_V_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new407.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingMaxPool_OgC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingMaxPool_OgC_ram
+INFO: [VRFC 10-311] analyzing module StreamingMaxPool_OgC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingDataWidthCo_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthCo_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_CloneSt2iS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_CloneSt2iS_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_CloneSt2iS
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_CloneSt0iy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_CloneSt0iy_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_CloneSt0iy
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_hostmem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_buffer
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_decoder
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_throttl
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_read
+INFO: [VRFC 10-311] analyzing module computeS1_hostmem_m_axi_write
+INFO: [VRFC 10-2458] undeclared symbol data_valid, assumed default net type wire [/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_hostmem_m_axi.v:2236]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new407_zec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_zec_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_zec
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DBbbk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbbk_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbbk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Mem2Stream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mem2Stream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Relu1D49j0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D49j0_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D49j0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new414.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new414
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new415_Rg6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_Rg6_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_Rg6
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new407_Bew.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_Bew_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_Bew
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DM3i2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DM3i2_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DM3i2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streami5jm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streami5jm_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streami5jm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/grouperPE_sampledocq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module grouperPE_sampledocq_ram
+INFO: [VRFC 10-311] analyzing module grouperPE_sampledocq
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streamibqm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streamibqm_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streamibqm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_164DeQ_x_x_x_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_164DeQ_x_x_x_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Relu1D412.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Relu1D412
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_1_wWhU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wWhU_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wWhU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_1_wXh4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wXh4_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wXh4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_2_wdEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_wdEe_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_wdEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streamibil.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streamibil_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streamibil
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingDataWidthCo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthCo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/fifo_w32_d1024_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w32_d1024_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/CloneStreamOnce.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CloneStreamOnce
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DMbck.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbck_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbck
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DBbfk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbfk_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbfk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DMbgk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbgk_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbgk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingDataWidthCo_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthCo_5
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_2_wcud.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_wcud_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_wcud
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_1_wYie.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wYie_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wYie
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Relu1D4bll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D4bll_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D4bll
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/get_random.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module get_random
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Relu1D_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_164DeQ_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_164DeQ_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new407_CeG.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_CeG_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_CeG
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DB7jG.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DB7jG_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DB7jG
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Relu1D4bdk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D4bdk_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D4bdk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DMbkl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbkl_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbkl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new411_Ffa.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_Ffa_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_Ffa
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Relu1D408.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Relu1D408
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/grouperPE_featureg8j.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module grouperPE_featureg8j_ram
+INFO: [VRFC 10-311] analyzing module grouperPE_featureg8j
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streamibhl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streamibhl_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streamibhl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new410.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new410
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/fifo_w32_d256_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w32_d256_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new_bkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new_bkb_ram
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new_bkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_weiNgs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiNgs_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiNgs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingDataWidthCo_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthCo_4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_grouper6jw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_grouper6jw_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_grouper6jw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/grouperPE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module grouperPE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/fifo_w8_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w8_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w8_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/grouperPE_indexedkbM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module grouperPE_indexedkbM_ram
+INFO: [VRFC 10-311] analyzing module grouperPE_indexedkbM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/fifo_w32_d2_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w32_d2_A_shiftReg
+INFO: [VRFC 10-311] analyzing module fifo_w32_d2_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new415_QgW.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_QgW_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_QgW
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingDataWidthCo_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthCo_3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streamibak.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streamibak_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streamibak
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_164DeQ_x_x_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_164DeQ_x_x_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_2_wfYi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_wfYi_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_wfYi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_computeS1_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_1_wVhK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wVhK_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1_wVhK
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/ResizeStream_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ResizeStream_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/fifo_w64_d1024_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w64_d1024_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_weiKfY.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiKfY_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiKfY
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Relu1D_bpm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D_bpm_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D_bpm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingDataWidthCo_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingDataWidthCo_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_weiMgi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiMgi_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiMgi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Relu1D_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Relu1D_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_432wdI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_432wdI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DBbjl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbjl_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DBbjl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/fifo_w8_d1024_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo_w8_d1024_A
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streamibek.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streamibek_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streamibek
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_2_weOg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_weOg_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_2_weOg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/StreamingMaxPool_Pre.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module StreamingMaxPool_Pre
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new415.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_ResizeSbrm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_ResizeSbrm_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_ResizeSbrm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/grouperPE_sampStosc4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module grouperPE_sampStosc4_ram
+INFO: [VRFC 10-311] analyzing module grouperPE_sampStosc4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/ResizeStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ResizeStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DB1iI.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DB1iI_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DB1iI
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_164DeQ_x_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_164DeQ_x_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new406.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new406
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new411_Gfk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_Gfk_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_Gfk
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new407_Aem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_Aem_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new407_Aem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new411_Hfu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_Hfu_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_Hfu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DMbom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbom_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DMbom
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Relu1D_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Relu1D_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Relu1D_4jc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D_4jc_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Relu1D_4jc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new4yd2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new4yd2_ram
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new4yd2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new411_IfE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_IfE_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411_IfE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Streamibml.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Streamibml_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Streamibml
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new411.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new411
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new415_Shg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_Shg_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_Shg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/start_for_Conv1DM8jQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DM8jQ_shiftReg
+INFO: [VRFC 10-311] analyzing module start_for_Conv1DM8jQ
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/CloneStream.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CloneStream
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DBuffer_new_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DBuffer_new_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new_weiLf8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiLf8_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new_weiLf8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/AESL_axi_master_hostmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_master_hostmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Conv1DMac_new415_Thq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_Thq_rom
+INFO: [VRFC 10-311] analyzing module Conv1DMac_new415_Thq
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/computeS1_mux_164DeQ.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module computeS1_mux_164DeQ
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/grouperPE_featurehbi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module grouperPE_featurehbi_ram
+INFO: [VRFC 10-311] analyzing module grouperPE_featurehbi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/Relu1D.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Relu1D
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/tukl/Amur/IndividualSyn/S1/solution1/sim/verilog/LFSR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LFSR
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.computeS1_control_s_axi
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_throttl(...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_reg_slic...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_fifo(DAT...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_buffer(D...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_fifo(DEP...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_fifo(DAT...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_fifo(DAT...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_write(NU...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_buffer(D...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_reg_slic...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi_read(NUM...
+Compiling module xil_defaultlib.computeS1_hostmem_m_axi(NUM_READ...
+Compiling module xil_defaultlib.Mem2Stream
+Compiling module xil_defaultlib.ResizeStream_1
+Compiling module xil_defaultlib.CloneStream
+Compiling module xil_defaultlib.Conv1DBuffer_new_bkb_ram
+Compiling module xil_defaultlib.Conv1DBuffer_new_bkb(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DBuffer_new_2
+Compiling module xil_defaultlib.Conv1DMac_new_2_wcud_rom
+Compiling module xil_defaultlib.Conv1DMac_new_2_wcud(DataWidth=6...
+Compiling module xil_defaultlib.Conv1DMac_new_2_wdEe_rom
+Compiling module xil_defaultlib.Conv1DMac_new_2_wdEe(DataWidth=6...
+Compiling module xil_defaultlib.Conv1DMac_new_2_weOg_rom
+Compiling module xil_defaultlib.Conv1DMac_new_2_weOg(DataWidth=6...
+Compiling module xil_defaultlib.Conv1DMac_new_2_wfYi_rom
+Compiling module xil_defaultlib.Conv1DMac_new_2_wfYi(DataWidth=6...
+Compiling module xil_defaultlib.Conv1DMac_new_2
+Compiling module xil_defaultlib.Relu1D_2
+Compiling module xil_defaultlib.StreamingDataWidthCo_4
+Compiling module xil_defaultlib.CloneStreamOnce
+Compiling module xil_defaultlib.grouperPE_featureg8j_ram
+Compiling module xil_defaultlib.grouperPE_featureg8j(DataWidth=8...
+Compiling module xil_defaultlib.grouperPE_featurehbi_ram
+Compiling module xil_defaultlib.grouperPE_featurehbi(DataWidth=8...
+Compiling module xil_defaultlib.grouperPE_indexedkbM_ram
+Compiling module xil_defaultlib.grouperPE_indexedkbM(DataWidth=8...
+Compiling module xil_defaultlib.grouperPE_sampledocq_ram
+Compiling module xil_defaultlib.grouperPE_sampledocq(DataWidth=8...
+Compiling module xil_defaultlib.grouperPE_sampStosc4_ram
+Compiling module xil_defaultlib.grouperPE_sampStosc4(DataWidth=3...
+Compiling module xil_defaultlib.get_random
+Compiling module xil_defaultlib.LFSR
+Compiling module xil_defaultlib.computeS1_mux_432wdI(ID=1)
+Compiling module xil_defaultlib.computeS1_mux_432xdS(ID=1,din0_W...
+Compiling module xil_defaultlib.fifo_w32_d256_A
+Compiling module xil_defaultlib.grouperPE
+Compiling module xil_defaultlib.Conv1DBuffer_new4yd2_ram
+Compiling module xil_defaultlib.Conv1DBuffer_new4yd2(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DBuffer_new406
+Compiling module xil_defaultlib.Conv1DMac_new407_zec_rom
+Compiling module xil_defaultlib.Conv1DMac_new407_zec(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new407_Aem_rom
+Compiling module xil_defaultlib.Conv1DMac_new407_Aem(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new407_Bew_rom
+Compiling module xil_defaultlib.Conv1DMac_new407_Bew(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new407_CeG_rom
+Compiling module xil_defaultlib.Conv1DMac_new407_CeG(DataWidth=8...
+Compiling module xil_defaultlib.computeS1_mux_164DeQ(ID=1,din0_W...
+Compiling module xil_defaultlib.Conv1DMac_new407
+Compiling module xil_defaultlib.Relu1D408
+Compiling module xil_defaultlib.StreamingDataWidthCo_1
+Compiling module xil_defaultlib.Conv1DBuffer_new410
+Compiling module xil_defaultlib.Conv1DMac_new411_Ffa_rom
+Compiling module xil_defaultlib.Conv1DMac_new411_Ffa(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new411_Gfk_rom
+Compiling module xil_defaultlib.Conv1DMac_new411_Gfk(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new411_Hfu_rom
+Compiling module xil_defaultlib.Conv1DMac_new411_Hfu(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new411_IfE_rom
+Compiling module xil_defaultlib.Conv1DMac_new411_IfE(DataWidth=8...
+Compiling module xil_defaultlib.computeS1_mux_164DeQ_x(ID=1,din0...
+Compiling module xil_defaultlib.Conv1DMac_new411
+Compiling module xil_defaultlib.Relu1D412
+Compiling module xil_defaultlib.StreamingDataWidthCo
+Compiling module xil_defaultlib.Conv1DBuffer_new
+Compiling module xil_defaultlib.Conv1DMac_new_weiKfY_rom
+Compiling module xil_defaultlib.Conv1DMac_new_weiKfY(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new_weiLf8_rom
+Compiling module xil_defaultlib.Conv1DMac_new_weiLf8(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new_weiMgi_rom
+Compiling module xil_defaultlib.Conv1DMac_new_weiMgi(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new_weiNgs_rom
+Compiling module xil_defaultlib.Conv1DMac_new_weiNgs(DataWidth=8...
+Compiling module xil_defaultlib.computeS1_mux_164DeQ_x_x(ID=1,di...
+Compiling module xil_defaultlib.Conv1DMac_new
+Compiling module xil_defaultlib.Relu1D
+Compiling module xil_defaultlib.StreamingDataWidthCo_2
+Compiling module xil_defaultlib.StreamingMaxPool_OgC_ram
+Compiling module xil_defaultlib.StreamingMaxPool_OgC(DataWidth=8...
+Compiling module xil_defaultlib.StreamingMaxPool_Pre
+Compiling module xil_defaultlib.Conv1DBuffer_new414
+Compiling module xil_defaultlib.Conv1DMac_new415_QgW_rom
+Compiling module xil_defaultlib.Conv1DMac_new415_QgW(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new415_Rg6_rom
+Compiling module xil_defaultlib.Conv1DMac_new415_Rg6(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new415_Shg_rom
+Compiling module xil_defaultlib.Conv1DMac_new415_Shg(DataWidth=8...
+Compiling module xil_defaultlib.Conv1DMac_new415_Thq_rom
+Compiling module xil_defaultlib.Conv1DMac_new415_Thq(DataWidth=8...
+Compiling module xil_defaultlib.computeS1_mux_164DeQ_x_x_x(ID=1,...
+Compiling module xil_defaultlib.Conv1DMac_new415
+Compiling module xil_defaultlib.Relu1D416
+Compiling module xil_defaultlib.StreamingDataWidthCo_3
+Compiling module xil_defaultlib.Conv1DBuffer_new_1
+Compiling module xil_defaultlib.Conv1DMac_new_1_wVhK_rom
+Compiling module xil_defaultlib.Conv1DMac_new_1_wVhK(DataWidth=5...
+Compiling module xil_defaultlib.Conv1DMac_new_1_wWhU_rom
+Compiling module xil_defaultlib.Conv1DMac_new_1_wWhU(DataWidth=5...
+Compiling module xil_defaultlib.Conv1DMac_new_1_wXh4_rom
+Compiling module xil_defaultlib.Conv1DMac_new_1_wXh4(DataWidth=5...
+Compiling module xil_defaultlib.Conv1DMac_new_1_wYie_rom
+Compiling module xil_defaultlib.Conv1DMac_new_1_wYie(DataWidth=6...
+Compiling module xil_defaultlib.computeS1_mux_164DeQ_x_x_x_x(ID=...
+Compiling module xil_defaultlib.Conv1DMac_new_1
+Compiling module xil_defaultlib.Relu1D_1
+Compiling module xil_defaultlib.StreamingDataWidthCo_5
+Compiling module xil_defaultlib.ResizeStream
+Compiling module xil_defaultlib.fifo_w64_d1024_A
+Compiling module xil_defaultlib.fifo_w8_d1024_A
+Compiling module xil_defaultlib.fifo_w32_d1024_A
+Compiling module xil_defaultlib.fifo_w8_d2_A_shiftReg
+Compiling module xil_defaultlib.fifo_w8_d2_A
+Compiling module xil_defaultlib.fifo_w32_d2_A_shiftReg
+Compiling module xil_defaultlib.fifo_w32_d2_A
+Compiling module xil_defaultlib.start_for_ResizeSZio_shiftReg
+Compiling module xil_defaultlib.start_for_ResizeSZio
+Compiling module xil_defaultlib.start_for_CloneSt0iy_shiftReg
+Compiling module xil_defaultlib.start_for_CloneSt0iy
+Compiling module xil_defaultlib.start_for_Conv1DB1iI_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DB1iI
+Compiling module xil_defaultlib.start_for_CloneSt2iS_shiftReg
+Compiling module xil_defaultlib.start_for_CloneSt2iS
+Compiling module xil_defaultlib.start_for_Conv1DM3i2_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DM3i2
+Compiling module xil_defaultlib.start_for_Relu1D_4jc_shiftReg
+Compiling module xil_defaultlib.start_for_Relu1D_4jc
+Compiling module xil_defaultlib.start_for_Streami5jm_shiftReg
+Compiling module xil_defaultlib.start_for_Streami5jm
+Compiling module xil_defaultlib.start_for_grouper6jw_shiftReg
+Compiling module xil_defaultlib.start_for_grouper6jw
+Compiling module xil_defaultlib.start_for_Conv1DB7jG_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DB7jG
+Compiling module xil_defaultlib.start_for_Conv1DM8jQ_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DM8jQ
+Compiling module xil_defaultlib.start_for_Relu1D49j0_shiftReg
+Compiling module xil_defaultlib.start_for_Relu1D49j0
+Compiling module xil_defaultlib.start_for_Streamibak_shiftReg
+Compiling module xil_defaultlib.start_for_Streamibak
+Compiling module xil_defaultlib.start_for_Conv1DBbbk_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DBbbk
+Compiling module xil_defaultlib.start_for_Conv1DMbck_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DMbck
+Compiling module xil_defaultlib.start_for_Relu1D4bdk_shiftReg
+Compiling module xil_defaultlib.start_for_Relu1D4bdk
+Compiling module xil_defaultlib.start_for_Streamibek_shiftReg
+Compiling module xil_defaultlib.start_for_Streamibek
+Compiling module xil_defaultlib.start_for_Conv1DBbfk_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DBbfk
+Compiling module xil_defaultlib.start_for_Conv1DMbgk_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DMbgk
+Compiling module xil_defaultlib.start_for_Relu1D_U0_shiftReg
+Compiling module xil_defaultlib.start_for_Relu1D_U0
+Compiling module xil_defaultlib.start_for_Streamibhl_shiftReg
+Compiling module xil_defaultlib.start_for_Streamibhl
+Compiling module xil_defaultlib.start_for_Streamibil_shiftReg
+Compiling module xil_defaultlib.start_for_Streamibil
+Compiling module xil_defaultlib.start_for_Conv1DBbjl_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DBbjl
+Compiling module xil_defaultlib.start_for_Conv1DMbkl_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DMbkl
+Compiling module xil_defaultlib.start_for_Relu1D4bll_shiftReg
+Compiling module xil_defaultlib.start_for_Relu1D4bll
+Compiling module xil_defaultlib.start_for_Streamibml_shiftReg
+Compiling module xil_defaultlib.start_for_Streamibml
+Compiling module xil_defaultlib.start_for_Conv1DBbnm_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DBbnm
+Compiling module xil_defaultlib.start_for_Conv1DMbom_shiftReg
+Compiling module xil_defaultlib.start_for_Conv1DMbom
+Compiling module xil_defaultlib.start_for_Relu1D_bpm_shiftReg
+Compiling module xil_defaultlib.start_for_Relu1D_bpm
+Compiling module xil_defaultlib.start_for_Streamibqm_shiftReg
+Compiling module xil_defaultlib.start_for_Streamibqm
+Compiling module xil_defaultlib.start_for_ResizeSbrm_shiftReg
+Compiling module xil_defaultlib.start_for_ResizeSbrm
+Compiling module xil_defaultlib.computeS1
+Compiling module xil_defaultlib.fifo(DEPTH=16384,WIDTH=64)
+Compiling module xil_defaultlib.AESL_axi_s_s1_out_V_V
+Compiling module xil_defaultlib.AESL_axi_master_hostmem
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_1
+Compiling module xil_defaultlib.apatb_computeS1_top
+Compiling module work.glbl
+Built simulation snapshot computeS1

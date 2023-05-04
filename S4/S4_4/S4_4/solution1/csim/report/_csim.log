@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../my_tb.cpp in debug mode
+   Compiling ../../../Compute.cpp in debug mode
+   Generating csim.exe
+ my out: 0.84375 my out: 0.867188
+
+Class: 8 - chair
+Probability: 0.867188
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

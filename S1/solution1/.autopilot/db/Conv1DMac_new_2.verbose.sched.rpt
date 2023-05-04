@@ -1,0 +1,406 @@
+
+
+================================================================
+== Vivado HLS Report for 'Conv1DMac_new_2'
+================================================================
+* Date:           Wed Apr 26 21:02:34 2023
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        S1
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z045ffg900-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.369|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-------+-------+-------+-------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    |  min  |  max  |  min  |  max  |   Type  |
+    +-------+-------+-------+-------+---------+
+    |  12292|  12292|  12292|  12292|   none  |
+    +-------+-------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------------------------+-------+-------+----------+-----------+-----------+-------+----------+
+        |                                                     |    Latency    | Iteration|  Initiation Interval  |  Trip |          |
+        |                      Loop Name                      |  min  |  max  |  Latency |  achieved |   target  | Count | Pipelined|
+        +-----------------------------------------------------+-------+-------+----------+-----------+-----------+-------+----------+
+        |- loop_ofmChannels_loop_neuronFold_loop_synapseFold  |  12290|  12290|         4|          1|          1|  12288|    yes   |
+        +-----------------------------------------------------+-------+-------+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 4
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 4, States = { 2 3 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	6  / (exitcond_flatten6)
+	3  / (!exitcond_flatten6)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	2  / true
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.30>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%macRegisters_0_V_4 = alloca i8"   --->   Operation 7 'alloca' 'macRegisters_0_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%macRegisters_1_V_4 = alloca i8"   --->   Operation 8 'alloca' 'macRegisters_1_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%macRegisters_2_V_4 = alloca i8"   --->   Operation 9 'alloca' 'macRegisters_2_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%macRegisters_3_V_4 = alloca i8"   --->   Operation 10 'alloca' 'macRegisters_3_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %out_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str473, i32 0, i32 0, [1 x i8]* @p_str474, [1 x i8]* @p_str475, [1 x i8]* @p_str476, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str477, [1 x i8]* @p_str478)"   --->   Operation 11 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* %in_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str466, i32 0, i32 0, [1 x i8]* @p_str467, [1 x i8]* @p_str468, [1 x i8]* @p_str469, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str470, [1 x i8]* @p_str471)"   --->   Operation 12 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_3_V_4"   --->   Operation 13 'store' <Predicate = true> <Delay = 1.30>
+ST_1 : Operation 14 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_2_V_4"   --->   Operation 14 'store' <Predicate = true> <Delay = 1.30>
+ST_1 : Operation 15 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_1_V_4"   --->   Operation 15 'store' <Predicate = true> <Delay = 1.30>
+ST_1 : Operation 16 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_0_V_4"   --->   Operation 16 'store' <Predicate = true> <Delay = 1.30>
+ST_1 : Operation 17 [1/1] (1.30ns)   --->   "br label %0" [S1/conv1d.h:782]   --->   Operation 17 'br' <Predicate = true> <Delay = 1.30>
+
+State 2 <SV = 1> <Delay = 8.25>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%indvar_flatten6 = phi i14 [ 0, %.preheader177.preheader ], [ %indvar_flatten_next6, %._crit_edge ]"   --->   Operation 18 'phi' 'indvar_flatten6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i6 [ 0, %.preheader177.preheader ], [ %indvar_flatten_next, %._crit_edge ]"   --->   Operation 19 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%nm = phi i4 [ 0, %.preheader177.preheader ], [ %nm_mid2, %._crit_edge ]" [S1/conv1d.h:784]   --->   Operation 20 'phi' 'nm' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%sf = phi i2 [ 0, %.preheader177.preheader ], [ %sf_2, %._crit_edge ]"   --->   Operation 21 'phi' 'sf' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%nm_cast1 = zext i4 %nm to i6" [S1/conv1d.h:783]   --->   Operation 22 'zext' 'nm_cast1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tmp = trunc i4 %nm to i3" [S1/conv1d.h:784]   --->   Operation 23 'trunc' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%p_shl = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %tmp, i2 0)" [S1/conv1d.h:808]   --->   Operation 24 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i5 %p_shl to i6" [S1/conv1d.h:808]   --->   Operation 25 'zext' 'p_shl_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (1.56ns)   --->   "%tmp_s = sub i6 %p_shl_cast, %nm_cast1" [S1/conv1d.h:808]   --->   Operation 26 'sub' 'tmp_s' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (0.99ns)   --->   "%tmp_99 = icmp eq i3 %tmp, 0" [S1/conv1d.h:784]   --->   Operation 27 'icmp' 'tmp_99' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.99ns)   --->   "%tmp_100 = icmp eq i3 %tmp, 1" [S1/conv1d.h:784]   --->   Operation 28 'icmp' 'tmp_100' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.99ns)   --->   "%tmp_101 = icmp eq i3 %tmp, 2" [S1/conv1d.h:784]   --->   Operation 29 'icmp' 'tmp_101' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.99ns)   --->   "%tmp_102 = icmp eq i3 %tmp, 3" [S1/conv1d.h:784]   --->   Operation 30 'icmp' 'tmp_102' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.99ns)   --->   "%tmp_107 = icmp eq i3 %tmp, -4" [S1/conv1d.h:784]   --->   Operation 31 'icmp' 'tmp_107' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.99ns)   --->   "%tmp_108 = icmp eq i3 %tmp, -3" [S1/conv1d.h:784]   --->   Operation 32 'icmp' 'tmp_108' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.99ns)   --->   "%tmp_109 = icmp eq i3 %tmp, -2" [S1/conv1d.h:784]   --->   Operation 33 'icmp' 'tmp_109' <Predicate = true> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.80ns)   --->   "%tmp_110 = or i1 %tmp_109, %tmp_108" [S1/conv1d.h:784]   --->   Operation 34 'or' 'tmp_110' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%tmp_111 = or i1 %tmp_107, %tmp_102" [S1/conv1d.h:784]   --->   Operation 35 'or' 'tmp_111' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.80ns)   --->   "%tmp_112 = or i1 %tmp_101, %tmp_100" [S1/conv1d.h:784]   --->   Operation 36 'or' 'tmp_112' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns) (grouped into LUT with out node newSel6)   --->   "%newSel = select i1 %tmp_109, i6 0, i6 -29" [S1/conv1d.h:784]   --->   Operation 37 'select' 'newSel' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 38 [1/1] (0.00ns) (grouped into LUT with out node newSel6)   --->   "%newSel1 = select i1 %tmp_107, i6 0, i6 -31" [S1/conv1d.h:784]   --->   Operation 38 'select' 'newSel1' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (0.00ns) (grouped into LUT with out node newSel5)   --->   "%newSel2 = select i1 %tmp_101, i6 -32, i6 0" [S1/conv1d.h:784]   --->   Operation 39 'select' 'newSel2' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (0.00ns) (grouped into LUT with out node newSel5)   --->   "%newSel3 = select i1 %tmp_99, i6 -29, i6 0" [S1/conv1d.h:784]   --->   Operation 40 'select' 'newSel3' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (0.00ns) (grouped into LUT with out node newSel6)   --->   "%newSel4 = select i1 %tmp_110, i6 %newSel, i6 %newSel1" [S1/conv1d.h:784]   --->   Operation 41 'select' 'newSel4' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (0.80ns) (out node of the LUT)   --->   "%or_cond = or i1 %tmp_110, %tmp_111" [S1/conv1d.h:784]   --->   Operation 42 'or' 'or_cond' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel5 = select i1 %tmp_112, i6 %newSel2, i6 %newSel3" [S1/conv1d.h:784]   --->   Operation 43 'select' 'newSel5' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel6 = select i1 %or_cond, i6 %newSel4, i6 %newSel5" [S1/conv1d.h:784]   --->   Operation 44 'select' 'newSel6' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (0.00ns) (grouped into LUT with out node newSel10)   --->   "%newSel7 = select i1 %tmp_109, i6 -29, i6 0" [S1/conv1d.h:784]   --->   Operation 45 'select' 'newSel7' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node newSel10)   --->   "%newSel8 = select i1 %tmp_110, i6 %newSel7, i6 0" [S1/conv1d.h:784]   --->   Operation 46 'select' 'newSel8' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node newSel10)   --->   "%tmp_113 = or i1 %tmp_112, %tmp_99" [S1/conv1d.h:784]   --->   Operation 47 'or' 'tmp_113' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns) (grouped into LUT with out node newSel10)   --->   "%newSel9 = select i1 %tmp_113, i6 0, i6 -32" [S1/conv1d.h:784]   --->   Operation 48 'select' 'newSel9' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel10 = select i1 %or_cond, i6 %newSel8, i6 %newSel9" [S1/conv1d.h:784]   --->   Operation 49 'select' 'newSel10' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node newSel17)   --->   "%newSel11 = select i1 %tmp_109, i6 0, i6 -28" [S1/conv1d.h:784]   --->   Operation 50 'select' 'newSel11' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node newSel17)   --->   "%newSel12 = select i1 %tmp_107, i6 -29, i6 0" [S1/conv1d.h:784]   --->   Operation 51 'select' 'newSel12' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node newSel16)   --->   "%newSel13 = select i1 %tmp_101, i6 0, i6 -27" [S1/conv1d.h:784]   --->   Operation 52 'select' 'newSel13' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 53 [1/1] (0.00ns) (grouped into LUT with out node newSel16)   --->   "%newSel14 = select i1 %tmp_99, i6 -31, i6 -32" [S1/conv1d.h:784]   --->   Operation 53 'select' 'newSel14' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node newSel17)   --->   "%newSel15 = select i1 %tmp_110, i6 %newSel11, i6 %newSel12" [S1/conv1d.h:784]   --->   Operation 54 'select' 'newSel15' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel16 = select i1 %tmp_112, i6 %newSel13, i6 %newSel14" [S1/conv1d.h:784]   --->   Operation 55 'select' 'newSel16' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 56 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel17 = select i1 %or_cond, i6 %newSel15, i6 %newSel16" [S1/conv1d.h:784]   --->   Operation 56 'select' 'newSel17' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node newSel19)   --->   "%newSel18 = select i1 %tmp_101, i6 -29, i6 0" [S1/conv1d.h:784]   --->   Operation 57 'select' 'newSel18' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node newSel19)   --->   "%newSel93_cast_cast = select i1 %tmp_99, i6 29, i6 0" [S1/conv1d.h:784]   --->   Operation 58 'select' 'newSel93_cast_cast' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 59 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel19 = select i1 %tmp_112, i6 %newSel18, i6 %newSel93_cast_cast" [S1/conv1d.h:784]   --->   Operation 59 'select' 'newSel19' <Predicate = true> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 60 [1/1] (1.76ns)   --->   "%exitcond_flatten6 = icmp eq i14 %indvar_flatten6, -4096"   --->   Operation 60 'icmp' 'exitcond_flatten6' <Predicate = true> <Delay = 1.76> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 61 [1/1] (1.71ns)   --->   "%indvar_flatten_next6 = add i14 1, %indvar_flatten6"   --->   Operation 61 'add' 'indvar_flatten_next6' <Predicate = true> <Delay = 1.71> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten6, label %1, label %.preheader177"   --->   Operation 62 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (1.18ns)   --->   "%exitcond_flatten = icmp eq i6 %indvar_flatten, 24"   --->   Operation 63 'icmp' 'exitcond_flatten' <Predicate = (!exitcond_flatten6)> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (0.83ns)   --->   "%nm_mid = select i1 %exitcond_flatten, i4 0, i4 %nm" [S1/conv1d.h:784]   --->   Operation 64 'select' 'nm_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node tmp_104)   --->   "%tmp_102_mid = select i1 %exitcond_flatten, i6 0, i6 %tmp_s" [S1/conv1d.h:808]   --->   Operation 65 'select' 'tmp_102_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node newSel57_cast_mid2)   --->   "%newSel57_cast_mid = select i1 %exitcond_flatten, i6 -29, i6 %newSel6" [S1/conv1d.h:784]   --->   Operation 66 'select' 'newSel57_cast_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node newSel71_cast_mid2)   --->   "%newSel71_cast_mid = select i1 %exitcond_flatten, i6 0, i6 %newSel10" [S1/conv1d.h:784]   --->   Operation 67 'select' 'newSel71_cast_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node newSel85_cast_mid2)   --->   "%newSel85_cast_mid = select i1 %exitcond_flatten, i6 -31, i6 %newSel17" [S1/conv1d.h:784]   --->   Operation 68 'select' 'newSel85_cast_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (0.00ns) (grouped into LUT with out node newSel99_cast_mid2)   --->   "%newSel20 = select i1 %exitcond_flatten, i6 29, i6 0"   --->   Operation 69 'select' 'newSel20' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node newSel99_cast_mid2)   --->   "%tmp_633 = or i1 %exitcond_flatten, %or_cond" [S1/conv1d.h:784]   --->   Operation 70 'or' 'tmp_633' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node newSel99_cast_mid2)   --->   "%newSel99_cast_mid = select i1 %tmp_633, i6 %newSel20, i6 %newSel19" [S1/conv1d.h:784]   --->   Operation 71 'select' 'newSel99_cast_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node tmp_103_mid)   --->   "%not_exitcond_flatten = xor i1 %exitcond_flatten, true" [S1/conv1d.h:784]   --->   Operation 72 'xor' 'not_exitcond_flatten' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 73 [1/1] (0.89ns)   --->   "%tmp_357 = icmp eq i2 %sf, -1" [S1/conv1d.h:784]   --->   Operation 73 'icmp' 'tmp_357' <Predicate = (!exitcond_flatten6)> <Delay = 0.89> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 74 [1/1] (0.80ns) (out node of the LUT)   --->   "%tmp_103_mid = and i1 %tmp_357, %not_exitcond_flatten" [S1/conv1d.h:784]   --->   Operation 74 'and' 'tmp_103_mid' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 75 [1/1] (1.52ns)   --->   "%nm_2 = add i4 1, %nm_mid" [S1/conv1d.h:783]   --->   Operation 75 'add' 'nm_2' <Predicate = (!exitcond_flatten6)> <Delay = 1.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node sf_mid2)   --->   "%tmp_358 = or i1 %tmp_103_mid, %exitcond_flatten" [S1/conv1d.h:784]   --->   Operation 76 'or' 'tmp_358' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 77 [1/1] (0.81ns) (out node of the LUT)   --->   "%sf_mid2 = select i1 %tmp_358, i2 0, i2 %sf" [S1/conv1d.h:784]   --->   Operation 77 'select' 'sf_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.81> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%nm_cast1_mid1 = zext i4 %nm_2 to i6" [S1/conv1d.h:783]   --->   Operation 78 'zext' 'nm_cast1_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_634 = trunc i4 %nm_2 to i3" [S1/conv1d.h:783]   --->   Operation 79 'trunc' 'tmp_634' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "%p_shl_mid1 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %tmp_634, i2 0)" [S1/conv1d.h:808]   --->   Operation 80 'bitconcatenate' 'p_shl_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%p_shl_cast_mid1 = zext i5 %p_shl_mid1 to i6" [S1/conv1d.h:808]   --->   Operation 81 'zext' 'p_shl_cast_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (1.56ns)   --->   "%tmp_102_mid1 = sub i6 %p_shl_cast_mid1, %nm_cast1_mid1" [S1/conv1d.h:808]   --->   Operation 82 'sub' 'tmp_102_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node tmp_104)   --->   "%tmp_102_mid2 = select i1 %tmp_103_mid, i6 %tmp_102_mid1, i6 %tmp_102_mid" [S1/conv1d.h:808]   --->   Operation 83 'select' 'tmp_102_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 84 [1/1] (0.99ns)   --->   "%tmp_286_mid1 = icmp eq i3 %tmp_634, 0" [S1/conv1d.h:783]   --->   Operation 84 'icmp' 'tmp_286_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 85 [1/1] (0.99ns)   --->   "%tmp_287_mid1 = icmp eq i3 %tmp_634, 1" [S1/conv1d.h:783]   --->   Operation 85 'icmp' 'tmp_287_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 86 [1/1] (0.99ns)   --->   "%tmp_288_mid1 = icmp eq i3 %tmp_634, 2" [S1/conv1d.h:783]   --->   Operation 86 'icmp' 'tmp_288_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 87 [1/1] (0.99ns)   --->   "%tmp_289_mid1 = icmp eq i3 %tmp_634, 3" [S1/conv1d.h:783]   --->   Operation 87 'icmp' 'tmp_289_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 88 [1/1] (0.99ns)   --->   "%tmp_290_mid1 = icmp eq i3 %tmp_634, -4" [S1/conv1d.h:783]   --->   Operation 88 'icmp' 'tmp_290_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 89 [1/1] (0.99ns)   --->   "%tmp_291_mid1 = icmp eq i3 %tmp_634, -3" [S1/conv1d.h:783]   --->   Operation 89 'icmp' 'tmp_291_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 90 [1/1] (0.99ns)   --->   "%tmp_292_mid1 = icmp eq i3 %tmp_634, -2" [S1/conv1d.h:783]   --->   Operation 90 'icmp' 'tmp_292_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.99> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 91 [1/1] (0.80ns)   --->   "%tmp_293_mid1 = or i1 %tmp_292_mid1, %tmp_291_mid1" [S1/conv1d.h:783]   --->   Operation 91 'or' 'tmp_293_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 92 [1/1] (0.00ns) (grouped into LUT with out node or_cond_mid1)   --->   "%tmp_294_mid1 = or i1 %tmp_290_mid1, %tmp_289_mid1" [S1/conv1d.h:783]   --->   Operation 92 'or' 'tmp_294_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 93 [1/1] (0.80ns)   --->   "%tmp_295_mid1 = or i1 %tmp_288_mid1, %tmp_287_mid1" [S1/conv1d.h:783]   --->   Operation 93 'or' 'tmp_295_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 94 [1/1] (0.00ns) (grouped into LUT with out node newSel6_mid1)   --->   "%newSel_mid1 = select i1 %tmp_292_mid1, i6 0, i6 -29" [S1/conv1d.h:783]   --->   Operation 94 'select' 'newSel_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node newSel6_mid1)   --->   "%newSel1_mid1 = select i1 %tmp_290_mid1, i6 0, i6 -31" [S1/conv1d.h:783]   --->   Operation 95 'select' 'newSel1_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node newSel5_mid1)   --->   "%newSel2_mid1 = select i1 %tmp_288_mid1, i6 -32, i6 0" [S1/conv1d.h:783]   --->   Operation 96 'select' 'newSel2_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node newSel5_mid1)   --->   "%newSel3_mid1 = select i1 %tmp_286_mid1, i6 -29, i6 0" [S1/conv1d.h:783]   --->   Operation 97 'select' 'newSel3_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node newSel6_mid1)   --->   "%newSel4_mid1 = select i1 %tmp_293_mid1, i6 %newSel_mid1, i6 %newSel1_mid1" [S1/conv1d.h:783]   --->   Operation 98 'select' 'newSel4_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 99 [1/1] (0.80ns) (out node of the LUT)   --->   "%or_cond_mid1 = or i1 %tmp_293_mid1, %tmp_294_mid1" [S1/conv1d.h:783]   --->   Operation 99 'or' 'or_cond_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 100 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel5_mid1 = select i1 %tmp_295_mid1, i6 %newSel2_mid1, i6 %newSel3_mid1" [S1/conv1d.h:783]   --->   Operation 100 'select' 'newSel5_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 101 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel6_mid1 = select i1 %or_cond_mid1, i6 %newSel4_mid1, i6 %newSel5_mid1" [S1/conv1d.h:783]   --->   Operation 101 'select' 'newSel6_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 102 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel57_cast_mid2 = select i1 %tmp_103_mid, i6 %newSel6_mid1, i6 %newSel57_cast_mid" [S1/conv1d.h:784]   --->   Operation 102 'select' 'newSel57_cast_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 103 [1/1] (0.00ns) (grouped into LUT with out node newSel10_mid1)   --->   "%newSel7_mid1 = select i1 %tmp_292_mid1, i6 -29, i6 0" [S1/conv1d.h:783]   --->   Operation 103 'select' 'newSel7_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 104 [1/1] (0.00ns) (grouped into LUT with out node newSel10_mid1)   --->   "%newSel8_mid1 = select i1 %tmp_293_mid1, i6 %newSel7_mid1, i6 0" [S1/conv1d.h:783]   --->   Operation 104 'select' 'newSel8_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node newSel10_mid1)   --->   "%tmp_308_mid1 = or i1 %tmp_295_mid1, %tmp_286_mid1" [S1/conv1d.h:783]   --->   Operation 105 'or' 'tmp_308_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node newSel10_mid1)   --->   "%newSel9_mid1 = select i1 %tmp_308_mid1, i6 0, i6 -32" [S1/conv1d.h:783]   --->   Operation 106 'select' 'newSel9_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 107 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel10_mid1 = select i1 %or_cond_mid1, i6 %newSel8_mid1, i6 %newSel9_mid1" [S1/conv1d.h:783]   --->   Operation 107 'select' 'newSel10_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 108 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel71_cast_mid2 = select i1 %tmp_103_mid, i6 %newSel10_mid1, i6 %newSel71_cast_mid" [S1/conv1d.h:784]   --->   Operation 108 'select' 'newSel71_cast_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node newSel17_mid1)   --->   "%newSel11_mid1 = select i1 %tmp_292_mid1, i6 0, i6 -28" [S1/conv1d.h:783]   --->   Operation 109 'select' 'newSel11_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node newSel17_mid1)   --->   "%newSel12_mid1 = select i1 %tmp_290_mid1, i6 -29, i6 0" [S1/conv1d.h:783]   --->   Operation 110 'select' 'newSel12_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node newSel16_mid1)   --->   "%newSel13_mid1 = select i1 %tmp_288_mid1, i6 0, i6 -27" [S1/conv1d.h:783]   --->   Operation 111 'select' 'newSel13_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node newSel16_mid1)   --->   "%newSel14_mid1 = select i1 %tmp_286_mid1, i6 -31, i6 -32" [S1/conv1d.h:783]   --->   Operation 112 'select' 'newSel14_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node newSel17_mid1)   --->   "%newSel15_mid1 = select i1 %tmp_293_mid1, i6 %newSel11_mid1, i6 %newSel12_mid1" [S1/conv1d.h:783]   --->   Operation 113 'select' 'newSel15_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 114 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel16_mid1 = select i1 %tmp_295_mid1, i6 %newSel13_mid1, i6 %newSel14_mid1" [S1/conv1d.h:783]   --->   Operation 114 'select' 'newSel16_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 115 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel17_mid1 = select i1 %or_cond_mid1, i6 %newSel15_mid1, i6 %newSel16_mid1" [S1/conv1d.h:783]   --->   Operation 115 'select' 'newSel17_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 116 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel85_cast_mid2 = select i1 %tmp_103_mid, i6 %newSel17_mid1, i6 %newSel85_cast_mid" [S1/conv1d.h:784]   --->   Operation 116 'select' 'newSel85_cast_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node newSel20_mid1)   --->   "%newSel18_mid1 = select i1 %tmp_288_mid1, i6 -29, i6 0" [S1/conv1d.h:783]   --->   Operation 117 'select' 'newSel18_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node newSel20_mid1)   --->   "%newSel93_cast_mid1_c = select i1 %tmp_286_mid1, i6 29, i6 0" [S1/conv1d.h:783]   --->   Operation 118 'select' 'newSel93_cast_mid1_c' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node newSel20_mid1)   --->   "%newSel19_mid1 = select i1 %tmp_295_mid1, i6 %newSel18_mid1, i6 %newSel93_cast_mid1_c" [S1/conv1d.h:783]   --->   Operation 119 'select' 'newSel19_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 120 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel20_mid1 = select i1 %or_cond_mid1, i6 0, i6 %newSel19_mid1" [S1/conv1d.h:783]   --->   Operation 120 'select' 'newSel20_mid1' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 121 [1/1] (0.97ns) (out node of the LUT)   --->   "%newSel99_cast_mid2 = select i1 %tmp_103_mid, i6 %newSel20_mid1, i6 %newSel99_cast_mid" [S1/conv1d.h:784]   --->   Operation 121 'select' 'newSel99_cast_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 122 [1/1] (0.83ns)   --->   "%nm_mid2 = select i1 %tmp_103_mid, i4 %nm_2, i4 %nm_mid" [S1/conv1d.h:784]   --->   Operation 122 'select' 'nm_mid2' <Predicate = (!exitcond_flatten6)> <Delay = 0.83> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node tmp_104)   --->   "%sf_cast = zext i2 %sf_mid2 to i6" [S1/conv1d.h:784]   --->   Operation 123 'zext' 'sf_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_114 = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str61)" [S1/conv1d.h:784]   --->   Operation 124 'specregionbegin' 'tmp_114' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 125 [1/1] (1.61ns) (out node of the LUT)   --->   "%tmp_104 = add i6 %sf_cast, %tmp_102_mid2" [S1/conv1d.h:808]   --->   Operation 125 'add' 'tmp_104' <Predicate = (!exitcond_flatten6)> <Delay = 1.61> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 126 [1/1] (0.89ns)   --->   "%tmp_106 = icmp eq i2 %sf_mid2, -2" [S1/conv1d.h:838]   --->   Operation 126 'icmp' 'tmp_106' <Predicate = (!exitcond_flatten6)> <Delay = 0.89> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 127 [1/1] (0.00ns)   --->   "br i1 %tmp_106, label %.preheader.0, label %.preheader177.._crit_edge_crit_edge" [S1/conv1d.h:838]   --->   Operation 127 'br' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str61, i32 %tmp_114)" [S1/conv1d.h:869]   --->   Operation 128 'specregionend' 'empty' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (1.27ns)   --->   "%sf_2 = add i2 %sf_mid2, 1" [S1/conv1d.h:784]   --->   Operation 129 'add' 'sf_2' <Predicate = (!exitcond_flatten6)> <Delay = 1.27> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 130 [1/1] (1.61ns)   --->   "%indvar_flatten_op = add i6 %indvar_flatten, 1"   --->   Operation 130 'add' 'indvar_flatten_op' <Predicate = (!exitcond_flatten6)> <Delay = 1.61> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 131 [1/1] (0.97ns)   --->   "%indvar_flatten_next = select i1 %exitcond_flatten, i6 1, i6 %indvar_flatten_op"   --->   Operation 131 'select' 'indvar_flatten_next' <Predicate = (!exitcond_flatten6)> <Delay = 0.97> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "br label %0"   --->   Operation 132 'br' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 3.40>
+ST_3 : Operation 133 [1/1] (3.40ns)   --->   "%tmp_V = call i8 @_ssdm_op_Read.ap_fifo.volatile.i8P(i8* %in_V_V)" [S1/conv1d.h:787]   --->   Operation 133 'read' 'tmp_V' <Predicate = (!exitcond_flatten6)> <Delay = 3.40> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_3 : Operation 134 [1/1] (0.00ns)   --->   "%tmp_104_cast = sext i6 %tmp_104 to i32" [S1/conv1d.h:808]   --->   Operation 134 'sext' 'tmp_104_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_3 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_105 = zext i32 %tmp_104_cast to i64" [S1/conv1d.h:808]   --->   Operation 135 'zext' 'tmp_105' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_3 : Operation 136 [1/1] (0.00ns)   --->   "%weights0_m_weights_V_4 = getelementptr [24 x i6]* @weights0_m_weights_V, i64 0, i64 %tmp_105" [S1/conv1d.h:808]   --->   Operation 136 'getelementptr' 'weights0_m_weights_V_4' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_3 : Operation 137 [2/2] (2.77ns)   --->   "%weights0_m_weights_V_5 = load i6* %weights0_m_weights_V_4, align 1" [S1/conv1d.h:808]   --->   Operation 137 'load' 'weights0_m_weights_V_5' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_3 : Operation 138 [1/1] (0.00ns)   --->   "%weights0_m_weights_V_6 = getelementptr [24 x i6]* @weights0_m_weights_V_1, i64 0, i64 %tmp_105" [S1/conv1d.h:808]   --->   Operation 138 'getelementptr' 'weights0_m_weights_V_6' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_3 : Operation 139 [2/2] (2.77ns)   --->   "%weights0_m_weights_V_7 = load i6* %weights0_m_weights_V_6, align 1" [S1/conv1d.h:808]   --->   Operation 139 'load' 'weights0_m_weights_V_7' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_3 : Operation 140 [1/1] (0.00ns)   --->   "%weights0_m_weights_V_8 = getelementptr [24 x i6]* @weights0_m_weights_V_2, i64 0, i64 %tmp_105" [S1/conv1d.h:808]   --->   Operation 140 'getelementptr' 'weights0_m_weights_V_8' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_3 : Operation 141 [2/2] (2.77ns)   --->   "%weights0_m_weights_V_9 = load i6* %weights0_m_weights_V_8, align 1" [S1/conv1d.h:808]   --->   Operation 141 'load' 'weights0_m_weights_V_9' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_3 : Operation 142 [1/1] (0.00ns)   --->   "%weights0_m_weights_V_10 = getelementptr [24 x i6]* @weights0_m_weights_V_3, i64 0, i64 %tmp_105" [S1/conv1d.h:808]   --->   Operation 142 'getelementptr' 'weights0_m_weights_V_10' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_3 : Operation 143 [2/2] (2.77ns)   --->   "%weights0_m_weights_V_11 = load i6* %weights0_m_weights_V_10, align 1" [S1/conv1d.h:808]   --->   Operation 143 'load' 'weights0_m_weights_V_11' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+
+State 4 <SV = 3> <Delay = 8.36>
+ST_4 : Operation 144 [1/2] (2.77ns)   --->   "%weights0_m_weights_V_5 = load i6* %weights0_m_weights_V_4, align 1" [S1/conv1d.h:808]   --->   Operation 144 'load' 'weights0_m_weights_V_5' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_4 : Operation 145 [1/1] (0.00ns)   --->   "%p_08_cast_cast = sext i8 %tmp_V to i14" [S1/conv1d.h:814]   --->   Operation 145 'sext' 'p_08_cast_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 146 [1/1] (0.00ns)   --->   "%p_0132_cast_cast = sext i6 %weights0_m_weights_V_5 to i14" [S1/conv1d.h:814]   --->   Operation 146 'sext' 'p_0132_cast_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 147 [1/1] (3.61ns)   --->   "%p_Val2_s_142 = mul i14 %p_0132_cast_cast, %p_08_cast_cast" [S1/conv1d.h:814]   --->   Operation 147 'mul' 'p_Val2_s_142' <Predicate = (!exitcond_flatten6)> <Delay = 3.61> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.61> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 148 [1/1] (0.00ns) (grouped into LUT with out node tmp_121)   --->   "%tmp_635 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_s_142, i32 13)" [S1/conv1d.h:814]   --->   Operation 148 'bitselect' 'tmp_635' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_115 = call i7 @_ssdm_op_PartSelect.i7.i14.i32.i32(i14 %p_Val2_s_142, i32 7, i32 13)" [S1/conv1d.h:814]   --->   Operation 149 'partselect' 'tmp_115' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 150 [1/1] (0.00ns)   --->   "%tmp_636 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_s_142, i32 6)" [S1/conv1d.h:814]   --->   Operation 150 'bitselect' 'tmp_636' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 151 [1/1] (0.00ns) (grouped into LUT with out node tmp_121)   --->   "%tmp_637 = trunc i14 %p_Val2_s_142 to i1" [S1/conv1d.h:814]   --->   Operation 151 'trunc' 'tmp_637' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 152 [1/1] (0.00ns) (grouped into LUT with out node tmp_121)   --->   "%tmp_118 = or i1 %tmp_637, %tmp_635" [S1/conv1d.h:814]   --->   Operation 152 'or' 'tmp_118' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 153 [1/1] (0.00ns) (grouped into LUT with out node tmp_121)   --->   "%tmp_119 = call i5 @_ssdm_op_PartSelect.i5.i14.i32.i32(i14 %p_Val2_s_142, i32 1, i32 5)" [S1/conv1d.h:814]   --->   Operation 153 'partselect' 'tmp_119' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 154 [1/1] (0.00ns) (grouped into LUT with out node tmp_121)   --->   "%tmp_120 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %tmp_119, i1 %tmp_118)" [S1/conv1d.h:814]   --->   Operation 154 'bitconcatenate' 'tmp_120' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 155 [1/1] (1.18ns) (out node of the LUT)   --->   "%tmp_121 = icmp ne i6 %tmp_120, 0" [S1/conv1d.h:814]   --->   Operation 155 'icmp' 'tmp_121' <Predicate = (!exitcond_flatten6)> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 156 [1/1] (0.80ns)   --->   "%qb_assign_3 = and i1 %tmp_121, %tmp_636" [S1/conv1d.h:814]   --->   Operation 156 'and' 'qb_assign_3' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 157 [1/2] (2.77ns)   --->   "%weights0_m_weights_V_7 = load i6* %weights0_m_weights_V_6, align 1" [S1/conv1d.h:808]   --->   Operation 157 'load' 'weights0_m_weights_V_7' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_4 : Operation 158 [1/1] (0.00ns)   --->   "%p_0132_1_cast_cast = sext i6 %weights0_m_weights_V_7 to i14" [S1/conv1d.h:814]   --->   Operation 158 'sext' 'p_0132_1_cast_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 159 [1/1] (3.61ns)   --->   "%p_Val2_1 = mul i14 %p_0132_1_cast_cast, %p_08_cast_cast" [S1/conv1d.h:814]   --->   Operation 159 'mul' 'p_Val2_1' <Predicate = (!exitcond_flatten6)> <Delay = 3.61> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.61> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 160 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_1)   --->   "%tmp_638 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_1, i32 13)" [S1/conv1d.h:814]   --->   Operation 160 'bitselect' 'tmp_638' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 161 [1/1] (0.00ns)   --->   "%tmp_123 = call i7 @_ssdm_op_PartSelect.i7.i14.i32.i32(i14 %p_Val2_1, i32 7, i32 13)" [S1/conv1d.h:814]   --->   Operation 161 'partselect' 'tmp_123' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 162 [1/1] (0.00ns)   --->   "%tmp_639 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_1, i32 6)" [S1/conv1d.h:814]   --->   Operation 162 'bitselect' 'tmp_639' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 163 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_1)   --->   "%tmp_640 = trunc i14 %p_Val2_1 to i1" [S1/conv1d.h:814]   --->   Operation 163 'trunc' 'tmp_640' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 164 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_1)   --->   "%tmp_126 = or i1 %tmp_640, %tmp_638" [S1/conv1d.h:814]   --->   Operation 164 'or' 'tmp_126' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 165 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_1)   --->   "%tmp_127 = call i5 @_ssdm_op_PartSelect.i5.i14.i32.i32(i14 %p_Val2_1, i32 1, i32 5)" [S1/conv1d.h:814]   --->   Operation 165 'partselect' 'tmp_127' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 166 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_1)   --->   "%tmp_128 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %tmp_127, i1 %tmp_126)" [S1/conv1d.h:814]   --->   Operation 166 'bitconcatenate' 'tmp_128' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 167 [1/1] (1.18ns) (out node of the LUT)   --->   "%tmp_251_1 = icmp ne i6 %tmp_128, 0" [S1/conv1d.h:814]   --->   Operation 167 'icmp' 'tmp_251_1' <Predicate = (!exitcond_flatten6)> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 168 [1/1] (0.80ns)   --->   "%qb_assign_3_1 = and i1 %tmp_251_1, %tmp_639" [S1/conv1d.h:814]   --->   Operation 168 'and' 'qb_assign_3_1' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 169 [1/2] (2.77ns)   --->   "%weights0_m_weights_V_9 = load i6* %weights0_m_weights_V_8, align 1" [S1/conv1d.h:808]   --->   Operation 169 'load' 'weights0_m_weights_V_9' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_4 : Operation 170 [1/1] (0.00ns)   --->   "%p_0132_2_cast_cast = sext i6 %weights0_m_weights_V_9 to i14" [S1/conv1d.h:814]   --->   Operation 170 'sext' 'p_0132_2_cast_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 171 [1/1] (3.61ns)   --->   "%p_Val2_2 = mul i14 %p_0132_2_cast_cast, %p_08_cast_cast" [S1/conv1d.h:814]   --->   Operation 171 'mul' 'p_Val2_2' <Predicate = (!exitcond_flatten6)> <Delay = 3.61> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.61> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 172 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_2)   --->   "%tmp_641 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_2, i32 13)" [S1/conv1d.h:814]   --->   Operation 172 'bitselect' 'tmp_641' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 173 [1/1] (0.00ns)   --->   "%tmp_129 = call i7 @_ssdm_op_PartSelect.i7.i14.i32.i32(i14 %p_Val2_2, i32 7, i32 13)" [S1/conv1d.h:814]   --->   Operation 173 'partselect' 'tmp_129' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 174 [1/1] (0.00ns)   --->   "%tmp_642 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_2, i32 6)" [S1/conv1d.h:814]   --->   Operation 174 'bitselect' 'tmp_642' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 175 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_2)   --->   "%tmp_643 = trunc i14 %p_Val2_2 to i1" [S1/conv1d.h:814]   --->   Operation 175 'trunc' 'tmp_643' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 176 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_2)   --->   "%tmp_132 = or i1 %tmp_643, %tmp_641" [S1/conv1d.h:814]   --->   Operation 176 'or' 'tmp_132' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 177 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_2)   --->   "%tmp_133 = call i5 @_ssdm_op_PartSelect.i5.i14.i32.i32(i14 %p_Val2_2, i32 1, i32 5)" [S1/conv1d.h:814]   --->   Operation 177 'partselect' 'tmp_133' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 178 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_2)   --->   "%tmp_134 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %tmp_133, i1 %tmp_132)" [S1/conv1d.h:814]   --->   Operation 178 'bitconcatenate' 'tmp_134' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 179 [1/1] (1.18ns) (out node of the LUT)   --->   "%tmp_251_2 = icmp ne i6 %tmp_134, 0" [S1/conv1d.h:814]   --->   Operation 179 'icmp' 'tmp_251_2' <Predicate = (!exitcond_flatten6)> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 180 [1/1] (0.80ns)   --->   "%qb_assign_3_2 = and i1 %tmp_251_2, %tmp_642" [S1/conv1d.h:814]   --->   Operation 180 'and' 'qb_assign_3_2' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 181 [1/2] (2.77ns)   --->   "%weights0_m_weights_V_11 = load i6* %weights0_m_weights_V_10, align 1" [S1/conv1d.h:808]   --->   Operation 181 'load' 'weights0_m_weights_V_11' <Predicate = (!exitcond_flatten6)> <Delay = 2.77> <Core = "ROM_nP">   --->   Core 48 'ROM_nP' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 24> <ROM>
+ST_4 : Operation 182 [1/1] (0.00ns)   --->   "%p_0132_3_cast_cast = sext i6 %weights0_m_weights_V_11 to i14" [S1/conv1d.h:814]   --->   Operation 182 'sext' 'p_0132_3_cast_cast' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 183 [1/1] (3.61ns)   --->   "%p_Val2_3 = mul i14 %p_0132_3_cast_cast, %p_08_cast_cast" [S1/conv1d.h:814]   --->   Operation 183 'mul' 'p_Val2_3' <Predicate = (!exitcond_flatten6)> <Delay = 3.61> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.61> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 184 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_3)   --->   "%tmp_644 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_3, i32 13)" [S1/conv1d.h:814]   --->   Operation 184 'bitselect' 'tmp_644' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 185 [1/1] (0.00ns)   --->   "%tmp_135 = call i7 @_ssdm_op_PartSelect.i7.i14.i32.i32(i14 %p_Val2_3, i32 7, i32 13)" [S1/conv1d.h:814]   --->   Operation 185 'partselect' 'tmp_135' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 186 [1/1] (0.00ns)   --->   "%tmp_645 = call i1 @_ssdm_op_BitSelect.i1.i14.i32(i14 %p_Val2_3, i32 6)" [S1/conv1d.h:814]   --->   Operation 186 'bitselect' 'tmp_645' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 187 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_3)   --->   "%tmp_646 = trunc i14 %p_Val2_3 to i1" [S1/conv1d.h:814]   --->   Operation 187 'trunc' 'tmp_646' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 188 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_3)   --->   "%tmp_138 = or i1 %tmp_646, %tmp_644" [S1/conv1d.h:814]   --->   Operation 188 'or' 'tmp_138' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 189 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_3)   --->   "%tmp_139 = call i5 @_ssdm_op_PartSelect.i5.i14.i32.i32(i14 %p_Val2_3, i32 1, i32 5)" [S1/conv1d.h:814]   --->   Operation 189 'partselect' 'tmp_139' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 190 [1/1] (0.00ns) (grouped into LUT with out node tmp_251_3)   --->   "%tmp_140 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %tmp_139, i1 %tmp_138)" [S1/conv1d.h:814]   --->   Operation 190 'bitconcatenate' 'tmp_140' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_4 : Operation 191 [1/1] (1.18ns) (out node of the LUT)   --->   "%tmp_251_3 = icmp ne i6 %tmp_140, 0" [S1/conv1d.h:814]   --->   Operation 191 'icmp' 'tmp_251_3' <Predicate = (!exitcond_flatten6)> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.89> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 192 [1/1] (0.80ns)   --->   "%qb_assign_3_3 = and i1 %tmp_251_3, %tmp_645" [S1/conv1d.h:814]   --->   Operation 192 'and' 'qb_assign_3_3' <Predicate = (!exitcond_flatten6)> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 8.06>
+ST_5 : Operation 193 [1/1] (0.00ns)   --->   "%macRegisters_0_V_4_s = load i8* %macRegisters_0_V_4" [S1/conv1d.h:827]   --->   Operation 193 'load' 'macRegisters_0_V_4_s' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 194 [1/1] (0.00ns)   --->   "%macRegisters_1_V_4_s = load i8* %macRegisters_1_V_4" [S1/conv1d.h:827]   --->   Operation 194 'load' 'macRegisters_1_V_4_s' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 195 [1/1] (0.00ns)   --->   "%macRegisters_2_V_4_s = load i8* %macRegisters_2_V_4" [S1/conv1d.h:827]   --->   Operation 195 'load' 'macRegisters_2_V_4_s' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 196 [1/1] (0.00ns)   --->   "%macRegisters_3_V_4_s = load i8* %macRegisters_3_V_4" [S1/conv1d.h:827]   --->   Operation 196 'load' 'macRegisters_3_V_4_s' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 197 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([50 x i8]* @loop_ofmChannels_loo)"   --->   Operation 197 'specloopname' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 198 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([33 x i8]* @loop_neuronFold_loop)"   --->   Operation 198 'specloopname' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 199 [1/1] (0.00ns)   --->   "%newSel57_cast_mid2_c = zext i6 %newSel57_cast_mid2 to i8" [S1/conv1d.h:784]   --->   Operation 199 'zext' 'newSel57_cast_mid2_c' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 200 [1/1] (0.00ns)   --->   "%newSel71_cast_mid2_c = zext i6 %newSel71_cast_mid2 to i8" [S1/conv1d.h:784]   --->   Operation 200 'zext' 'newSel71_cast_mid2_c' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 201 [1/1] (0.00ns)   --->   "%newSel85_cast_mid2_c = zext i6 %newSel85_cast_mid2 to i8" [S1/conv1d.h:784]   --->   Operation 201 'zext' 'newSel85_cast_mid2_c' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 202 [1/1] (0.00ns)   --->   "%newSel99_cast_mid2_c = zext i6 %newSel99_cast_mid2 to i8" [S1/conv1d.h:784]   --->   Operation 202 'zext' 'newSel99_cast_mid2_c' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 203 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str61) nounwind" [S1/conv1d.h:784]   --->   Operation 203 'specloopname' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 204 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [S1/conv1d.h:785]   --->   Operation 204 'specpipeline' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 205 [1/1] (0.00ns)   --->   "%tmp_116 = sext i7 %tmp_115 to i8" [S1/conv1d.h:814]   --->   Operation 205 'sext' 'tmp_116' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 206 [1/1] (0.00ns)   --->   "%tmp_122 = zext i1 %qb_assign_3 to i8" [S1/conv1d.h:814]   --->   Operation 206 'zext' 'tmp_122' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 207 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp43 = add i8 %tmp_122, %macRegisters_0_V_4_s" [S1/conv1d.h:827]   --->   Operation 207 'add' 'tmp43' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 208 [1/1] (2.96ns) (root node of TernaryAdder)   --->   "%macRegisters_0_V = add i8 %tmp_116, %tmp43" [S1/conv1d.h:827]   --->   Operation 208 'add' 'macRegisters_0_V' <Predicate = (!exitcond_flatten6)> <Delay = 2.96> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 209 [1/1] (0.00ns)   --->   "%tmp_124 = sext i7 %tmp_123 to i8" [S1/conv1d.h:814]   --->   Operation 209 'sext' 'tmp_124' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 210 [1/1] (0.00ns)   --->   "%tmp_252_1 = zext i1 %qb_assign_3_1 to i8" [S1/conv1d.h:814]   --->   Operation 210 'zext' 'tmp_252_1' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 211 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp44 = add i8 %tmp_252_1, %macRegisters_1_V_4_s" [S1/conv1d.h:827]   --->   Operation 211 'add' 'tmp44' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 212 [1/1] (2.96ns) (root node of TernaryAdder)   --->   "%macRegisters_1_V = add i8 %tmp_124, %tmp44" [S1/conv1d.h:827]   --->   Operation 212 'add' 'macRegisters_1_V' <Predicate = (!exitcond_flatten6)> <Delay = 2.96> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 213 [1/1] (0.00ns)   --->   "%tmp_130 = sext i7 %tmp_129 to i8" [S1/conv1d.h:814]   --->   Operation 213 'sext' 'tmp_130' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 214 [1/1] (0.00ns)   --->   "%tmp_252_2 = zext i1 %qb_assign_3_2 to i8" [S1/conv1d.h:814]   --->   Operation 214 'zext' 'tmp_252_2' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 215 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp45 = add i8 %tmp_252_2, %macRegisters_2_V_4_s" [S1/conv1d.h:827]   --->   Operation 215 'add' 'tmp45' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 216 [1/1] (2.96ns) (root node of TernaryAdder)   --->   "%macRegisters_2_V = add i8 %tmp_130, %tmp45" [S1/conv1d.h:827]   --->   Operation 216 'add' 'macRegisters_2_V' <Predicate = (!exitcond_flatten6)> <Delay = 2.96> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 217 [1/1] (0.00ns)   --->   "%tmp_136 = sext i7 %tmp_135 to i8" [S1/conv1d.h:814]   --->   Operation 217 'sext' 'tmp_136' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 218 [1/1] (0.00ns)   --->   "%tmp_252_3 = zext i1 %qb_assign_3_3 to i8" [S1/conv1d.h:814]   --->   Operation 218 'zext' 'tmp_252_3' <Predicate = (!exitcond_flatten6)> <Delay = 0.00>
+ST_5 : Operation 219 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp46 = add i8 %tmp_252_3, %macRegisters_3_V_4_s" [S1/conv1d.h:827]   --->   Operation 219 'add' 'tmp46' <Predicate = (!exitcond_flatten6)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 220 [1/1] (2.96ns) (root node of TernaryAdder)   --->   "%macRegisters_3_V = add i8 %tmp_136, %tmp46" [S1/conv1d.h:827]   --->   Operation 220 'add' 'macRegisters_3_V' <Predicate = (!exitcond_flatten6)> <Delay = 2.96> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.48> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 221 [1/1] (1.30ns)   --->   "store i8 %macRegisters_3_V, i8* %macRegisters_3_V_4" [S1/conv1d.h:835]   --->   Operation 221 'store' <Predicate = (!tmp_106)> <Delay = 1.30>
+ST_5 : Operation 222 [1/1] (1.30ns)   --->   "store i8 %macRegisters_2_V, i8* %macRegisters_2_V_4" [S1/conv1d.h:835]   --->   Operation 222 'store' <Predicate = (!tmp_106)> <Delay = 1.30>
+ST_5 : Operation 223 [1/1] (1.30ns)   --->   "store i8 %macRegisters_1_V, i8* %macRegisters_1_V_4" [S1/conv1d.h:835]   --->   Operation 223 'store' <Predicate = (!tmp_106)> <Delay = 1.30>
+ST_5 : Operation 224 [1/1] (1.30ns)   --->   "store i8 %macRegisters_0_V, i8* %macRegisters_0_V_4" [S1/conv1d.h:835]   --->   Operation 224 'store' <Predicate = (!tmp_106)> <Delay = 1.30>
+ST_5 : Operation 225 [1/1] (0.00ns)   --->   "br label %._crit_edge" [S1/conv1d.h:838]   --->   Operation 225 'br' <Predicate = (!tmp_106)> <Delay = 0.00>
+ST_5 : Operation 226 [1/1] (1.69ns)   --->   "%p_Val2_s = add i8 %newSel57_cast_mid2_c, %macRegisters_0_V" [S1/conv1d.h:850]   --->   Operation 226 'add' 'p_Val2_s' <Predicate = (tmp_106)> <Delay = 1.69> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 227 [1/1] (1.69ns)   --->   "%p_Val2_24_1 = add i8 %newSel71_cast_mid2_c, %macRegisters_1_V" [S1/conv1d.h:850]   --->   Operation 227 'add' 'p_Val2_24_1' <Predicate = (tmp_106)> <Delay = 1.69> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 228 [1/1] (1.69ns)   --->   "%p_Val2_24_2 = add i8 %newSel85_cast_mid2_c, %macRegisters_2_V" [S1/conv1d.h:850]   --->   Operation 228 'add' 'p_Val2_24_2' <Predicate = (tmp_106)> <Delay = 1.69> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 229 [1/1] (1.69ns)   --->   "%p_Val2_24_3 = add i8 %newSel99_cast_mid2_c, %macRegisters_3_V" [S1/conv1d.h:850]   --->   Operation 229 'add' 'p_Val2_24_3' <Predicate = (tmp_106)> <Delay = 1.69> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.61> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 230 [1/1] (0.00ns)   --->   "%tmp_V_52 = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 %p_Val2_24_3, i8 %p_Val2_24_2, i8 %p_Val2_24_1, i8 %p_Val2_s)" [S1/conv1d.h:861]   --->   Operation 230 'bitconcatenate' 'tmp_V_52' <Predicate = (tmp_106)> <Delay = 0.00>
+ST_5 : Operation 231 [1/1] (3.40ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %out_V_V, i32 %tmp_V_52)" [S1/conv1d.h:867]   --->   Operation 231 'write' <Predicate = (tmp_106)> <Delay = 3.40> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_5 : Operation 232 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_3_V_4"   --->   Operation 232 'store' <Predicate = (tmp_106)> <Delay = 1.30>
+ST_5 : Operation 233 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_2_V_4"   --->   Operation 233 'store' <Predicate = (tmp_106)> <Delay = 1.30>
+ST_5 : Operation 234 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_1_V_4"   --->   Operation 234 'store' <Predicate = (tmp_106)> <Delay = 1.30>
+ST_5 : Operation 235 [1/1] (1.30ns)   --->   "store i8 0, i8* %macRegisters_0_V_4"   --->   Operation 235 'store' <Predicate = (tmp_106)> <Delay = 1.30>
+ST_5 : Operation 236 [1/1] (0.00ns)   --->   "br label %._crit_edge" [S1/conv1d.h:868]   --->   Operation 236 'br' <Predicate = (tmp_106)> <Delay = 0.00>
+
+State 6 <SV = 2> <Delay = 0.00>
+ST_6 : Operation 237 [1/1] (0.00ns)   --->   "ret void" [S1/conv1d.h:875]   --->   Operation 237 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.3ns
+The critical path consists of the following:
+	'alloca' operation ('macRegisters[0].V') [7]  (0 ns)
+	'store' operation of constant 0 on local variable 'macRegisters[0].V' [16]  (1.3 ns)
+
+ <State 2>: 8.26ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [20]  (0 ns)
+	'icmp' operation ('exitcond_flatten') [70]  (1.19 ns)
+	'select' operation ('nm_mid', S1/conv1d.h:784) [71]  (0.836 ns)
+	'add' operation ('nm', S1/conv1d.h:783) [82]  (1.52 ns)
+	'icmp' operation ('tmp_287_mid1', S1/conv1d.h:783) [93]  (0.994 ns)
+	'or' operation ('tmp_295_mid1', S1/conv1d.h:783) [101]  (0.8 ns)
+	'select' operation ('newSel16_mid1', S1/conv1d.h:783) [124]  (0.972 ns)
+	'select' operation ('newSel17_mid1', S1/conv1d.h:783) [125]  (0.972 ns)
+	'select' operation ('newSel85_cast_mid2', S1/conv1d.h:784) [126]  (0.972 ns)
+
+ <State 3>: 3.4ns
+The critical path consists of the following:
+	fifo read on port 'in_V_V' (S1/conv1d.h:787) [139]  (3.4 ns)
+
+ <State 4>: 8.37ns
+The critical path consists of the following:
+	'load' operation ('weights0_m_weights_V_5', S1/conv1d.h:808) on array 'weights0_m_weights_V' [144]  (2.77 ns)
+	'mul' operation ('p_Val2_s_142', S1/conv1d.h:814) [147]  (3.61 ns)
+	'or' operation ('tmp_118', S1/conv1d.h:814) [153]  (0 ns)
+	'icmp' operation ('tmp_121', S1/conv1d.h:814) [156]  (1.19 ns)
+	'and' operation ('qb_assign_3', S1/conv1d.h:814) [157]  (0.8 ns)
+
+ <State 5>: 8.06ns
+The critical path consists of the following:
+	'load' operation ('macRegisters_0_V_4_s', S1/conv1d.h:827) on local variable 'macRegisters[0].V' [65]  (0 ns)
+	'add' operation ('tmp43', S1/conv1d.h:827) [159]  (0 ns)
+	'add' operation ('macRegisters[0].V', S1/conv1d.h:827) [160]  (2.97 ns)
+	'add' operation ('p_Val2_s', S1/conv1d.h:850) [221]  (1.7 ns)
+	fifo write on port 'out_V_V' (S1/conv1d.h:867) [226]  (3.4 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,72 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'computeS2'" level="0">
+<item name = "Date">Wed Apr 26 22:20:32 2023
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">S2</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z045ffg900-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.198, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">25442976, 25442976, 8388741, 8388741, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_grouperPE_fu_654">grouperPE, 438278, 438278, 438278, 438278, none</column>
+<column name="grp_Conv1DMac_new403_fu_661">Conv1DMac_new403, 524293, 524293, 524293, 524293, none</column>
+<column name="grp_Conv1DMac_new399_fu_675">Conv1DMac_new399, 8388613, 8388613, 8388613, 8388613, none</column>
+<column name="grp_Conv1DMac_new_fu_689">Conv1DMac_new, 8388613, 8388613, 8388613, 8388613, none</column>
+<column name="grp_Conv1DMac_new395_fu_703">Conv1DMac_new395, 8388613, 8388613, 8388613, 8388613, none</column>
+<column name="grp_Conv1DMac_new_1_fu_717">Conv1DMac_new_1, 524293, 524293, 524293, 524293, none</column>
+<column name="grp_Conv1DBuffer_new394_fu_731">Conv1DBuffer_new394, 8388740, 8388740, 8388740, 8388740, none</column>
+<column name="grp_Conv1DBuffer_new398_fu_737">Conv1DBuffer_new398, 8388740, 8388740, 8388740, 8388740, none</column>
+<column name="grp_Conv1DBuffer_new_fu_743">Conv1DBuffer_new, 8388740, 8388740, 8388740, 8388740, none</column>
+<column name="grp_Conv1DBuffer_new402_fu_749">Conv1DBuffer_new402, 524420, 524420, 524420, 524420, none</column>
+<column name="grp_Conv1DBuffer_new_1_fu_755">Conv1DBuffer_new_1, 524420, 524420, 524420, 524420, none</column>
+<column name="grp_StreamingDataWidthCo_1_fu_761">StreamingDataWidthCo_1, 262146, 262146, 262146, 262146, none</column>
+<column name="grp_StreamingDataWidthCo_fu_767">StreamingDataWidthCo, 262146, 262146, 262146, 262146, none</column>
+<column name="grp_StreamingDataWidthCo_2_fu_773">StreamingDataWidthCo_2, 262146, 262146, 262146, 262146, none</column>
+<column name="grp_StreamingDataWidthCo_3_fu_779">StreamingDataWidthCo_3, 16386, 16386, 16386, 16386, none</column>
+<column name="grp_StreamingDataWidthCo_4_fu_785">StreamingDataWidthCo_4, 16386, 16386, 16386, 16386, none</column>
+<column name="grp_StreamingMaxPool_Pre_fu_791">StreamingMaxPool_Pre, 279299, 279299, 279299, 279299, none</column>
+<column name="grp_ResizeStream_fu_797">ResizeStream, 32769, 32769, 32769, 32769, none</column>
+<column name="grp_ResizeStream_1_fu_804">ResizeStream_1, 3073, 3073, 3073, 3073, none</column>
+<column name="grp_Relu1D396_fu_811">Relu1D396, 65538, 65538, 65538, 65538, none</column>
+<column name="grp_Relu1D400_fu_817">Relu1D400, 65538, 65538, 65538, 65538, none</column>
+<column name="grp_Relu1D_fu_823">Relu1D, 65538, 65538, 65538, 65538, none</column>
+<column name="grp_Relu1D404_fu_829">Relu1D404, 4098, 4098, 4098, 4098, none</column>
+<column name="grp_Relu1D_1_fu_835">Relu1D_1, 4098, 4098, 4098, 4098, none</column>
+<column name="grp_ResizeStream_2_fu_841">ResizeStream_2, 32769, 32769, 32769, 32769, none</column>
+<column name="grp_CloneStream_fu_848">CloneStream, 1538, 1538, 1538, 1538, none</column>
+<column name="grp_ResizeStream_3_fu_855">ResizeStream_3, 3073, 3073, 3073, 3073, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
